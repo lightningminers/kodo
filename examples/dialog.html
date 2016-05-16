@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="../dist/kodo.css" media="screen" title="no title" charset="utf-8">
+		<script src="../node_modules/react/dist/react.js" charset="utf-8"></script>
+		<script src="../node_modules/react-dom/dist/react-dom.js" charset="utf-8"></script>
+		<script src="../browser.min.js"></script>
+		<style>
+			.title{
+				padding: 2em 0;
+			}
+			.page_title{
+				color:#225fba;
+				text-align: center;
+				font-size: 34px;
+				font-weight: 400;
+				margin: 0 15px;
+			}
+		</style>
+  </head>
+  <body>
+    <div class="container">
+			<div class="title">
+				<h1 class="page_title">Button</h1>
+			</div>
+		</div>
+		<div id="app"></div>
+		<script src="../dist/kodo.js" charset="utf-8"></script>
+		<script type="text/babel">
+			var ButtonOnClick = function (e) {
+				e.preventDefault();
+			}
+			var Button = Kodo.Button;
+			ReactDOM.render((
+				<div>
+					<Button type="warn" href="https://github.com/icepy" onClick={ ButtonOnClick.bind(this) }>@github icepy</Button>
+					<Button href="https://github.com/icepy" onClick={ ButtonOnClick.bind(this) }>@github icepy</Button>
+					<Button disabled={true} href="https://github.com/icepy" onClick={ ButtonOnClick.bind(this) }>@github icepy</Button>
+					<Button disabled={true}>禁止按钮</Button>
+					<Button type="plain">Plain 按钮</Button>
+					<Button>确定button</Button>
+				</div>
+			),document.getElementById('app'));
+		</script>
+  </body>
+</html>
