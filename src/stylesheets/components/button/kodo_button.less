@@ -7,7 +7,32 @@
 	font-size: 18px;
 	text-align: center;
 	text-decoration: none;
-	color:#29D96C;
+	color:#fff;
+	line-height: @buttonHeight;
 	border-radius: 5px;
 	overflow: hidden;
+	margin: 5px 0 5px 0;
 }
+
+button.kodo_btn{
+	background-color: #fff;
+}
+
+button.kodo_btn:focus{
+	outline:inherit;
+}
+
+.kodo_btn[disabled]{
+	background-color: @disabledColor;
+	color: #c9c9c9;
+	border: 1px solid #c9c9c9;
+}
+
+.kodo_btn_default{
+	color: @defaultColor;
+  border: 1px solid @defaultColor;
+}
+
+@import "./kodo_button_plain.less";
+@import "./kodo_button_primary.less";
+@import "./kodo_button_warn.less";

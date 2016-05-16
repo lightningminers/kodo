@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title></title>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" media="screen" title="no title" charset="utf-8">
 		<link rel="stylesheet" href="../dist/kodo.css" media="screen" title="no title" charset="utf-8">
 		<script src="../node_modules/react/dist/react.js" charset="utf-8"></script>
 		<script src="../node_modules/react-dom/dist/react-dom.js" charset="utf-8"></script>
@@ -18,31 +19,36 @@
 				font-weight: 400;
 				margin: 0 15px;
 			}
+			.page_pd{
+				padding-left: 5px;
+			}
+			h1{
+				font-size:14px;
+			}
 		</style>
-	</head>
-	<body>
-		<div class="container">
+  </head>
+  <body>
+    <div class="container">
 			<div class="title">
-				<h1 class="page_title">Button</h1>
+				<h1 class="page_title">Toast</h1>
 			</div>
 		</div>
 		<div id="app"></div>
 		<script src="../dist/kodo.js" charset="utf-8"></script>
 		<script type="text/babel">
 			var ButtonOnClick = function (e) {
-				e.preventDefault();
-			}
+        console.log(this);
+			};
+			var Icon = Kodo.Icon;
 			var Button = Kodo.Button;
 			ReactDOM.render((
 				<div>
-					<Button type="warn" href="https://github.com/icepy" onClick={ ButtonOnClick.bind(this) }>@github icepy</Button>
-					<Button href="https://github.com/icepy" onClick={ ButtonOnClick.bind(this) }>@github icepy</Button>
-					<Button disabled={true} href="https://github.com/icepy" onClick={ ButtonOnClick.bind(this) }>@github icepy</Button>
-					<Button disabled={true}>禁止按钮</Button>
-					<Button type="plain">Plain 按钮</Button>
-					<Button>确定button</Button>
+					<Button type="warn" onClick={ ButtonOnClick.bind(this) }>
+						<Icon value="alert-circled"></Icon>
+						警告
+					</Button>
 				</div>
 			),document.getElementById('app'));
 		</script>
-	</body>
+  </body>
 </html>

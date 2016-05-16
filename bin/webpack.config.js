@@ -18,7 +18,7 @@ var config = {
 	output: {
 		path: path.resolve(containerPath,'dist/'),
 		filename: 'kodo.js',
-		library: 'KodoUI',
+		library: 'Kodo',
 		libraryTarget: 'umd'
 	},
 	module:{

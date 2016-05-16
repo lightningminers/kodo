@@ -7,9 +7,38 @@
   font-size: 18px;
   text-align: center;
   text-decoration: none;
-  color: #29D96C;
+  color: #fff;
+  line-height: 1.8;
   border-radius: 5px;
   overflow: hidden;
+  margin: 5px 0 5px 0;
+}
+button.kodo_btn {
+  background-color: #fff;
+}
+button.kodo_btn:focus {
+  outline: inherit;
+}
+.kodo_btn[disabled] {
+  background-color: #F7F7F7;
+  color: #c9c9c9;
+  border: 1px solid #c9c9c9;
+}
+.kodo_btn_default {
+  color: #225fba;
+  border: 1px solid #225fba;
+}
+.kodo_btn_plain {
+  color: #5A5A5A;
+  border: 1px solid #5A5A5A;
+}
+.kodo_btn_primary {
+  color: #29D96C;
+  border: 1px solid #29D96C;
+}
+.kodo_btn_warn {
+  color: #E64340;
+  border: 1px solid #E64340;
 }
 
 /*# sourceMappingURL=kodo.css.map*/

@@ -4,10 +4,10 @@
 	else if(typeof define === 'function' && define.amd)
 		define([], factory);
 	else if(typeof exports === 'object')
-		exports["KodoUI"] = factory(require("react"));
+		exports["Kodo"] = factory(require("react"));
 	else
-		root["KodoUI"] = factory(root["React"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE_4__) {
+		root["Kodo"] = factory(root["React"]);
+})(this, function(__WEBPACK_EXTERNAL_MODULE_5__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -56,22 +56,35 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 	
-	var _button = __webpack_require__(2);
+	var _button = __webpack_require__(3);
+	
+	var _toast = __webpack_require__(13);
+	
+	var _toast2 = _interopRequireDefault(_toast);
+	
+	var _icon = __webpack_require__(14);
+	
+	var _icon2 = _interopRequireDefault(_icon);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	module.exports = {
-		Button: _button.Button
+		Button: _button.Button,
+		Toast: _toast2.default,
+		Icon: _icon2.default
 	};
 	
-	__webpack_require__(6);
+	__webpack_require__(7);
 
 /***/ },
 /* 1 */,
-/* 2 */
+/* 2 */,
+/* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var _button = __webpack_require__(3);
+	var _button = __webpack_require__(4);
 	
 	var _button2 = _interopRequireDefault(_button);
 	
@@ -82,7 +95,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 3 */
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -95,11 +108,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _react = __webpack_require__(4);
+	var _react = __webpack_require__(5);
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _classnames = __webpack_require__(5);
+	var _classnames = __webpack_require__(6);
 	
 	var _classnames2 = _interopRequireDefault(_classnames);
 	
@@ -114,7 +127,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
 	/**
-	 * 按钮常见有三个操作场景，确定（primary），取消（default），警告（warn）
+	 * 按钮常见有三个操作场景，确定（plain），默认（default），警告或者取消（warn）
 	 */
 	
 	var propTypes = {
@@ -126,7 +139,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var defaultProps = {
 		size: 'normal',
-		type: 'primary',
+		type: 'default',
 		disabled: false
 	};
 	
@@ -146,7 +159,6 @@ return /******/ (function(modules) { // webpackBootstrap
 				var type = _props.type;
 				var size = _props.size;
 				var disabled = _props.disabled;
-				var plain = _props.plain;
 				var className = _props.className;
 				var component = _props.component;
 				var children = _props.children;
@@ -154,11 +166,10 @@ return /******/ (function(modules) { // webpackBootstrap
 				var Component = component || (this.props.href ? 'a' : 'button');
 				var css = (0, _classnames2.default)(_defineProperty({
 					kodo_btn: true,
-					kodo_btn_primary: type === 'primary' && !plain,
-					kodo_btn_default: type === 'default' && !plain,
+					kodo_btn_primary: type === 'primary',
+					kodo_btn_default: type === 'default',
+					kodo_btn_plain: type === 'plain',
 					kodo_btn_warn: type === 'warn',
-					kodo_btn_plain_primary: type === 'primary' && plain,
-					kodo_btn_plain_default: type === 'default' && plain,
 					kodo_btn_mini: size === 'small',
 					kodo_btn_disabled: disabled
 				}, className, className));
@@ -181,13 +192,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = Button;
 
 /***/ },
-/* 4 */
+/* 5 */
 /***/ function(module, exports) {
 
-	module.exports = __WEBPACK_EXTERNAL_MODULE_4__;
+	module.exports = __WEBPACK_EXTERNAL_MODULE_5__;
 
 /***/ },
-/* 5 */
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -241,10 +252,131 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 6 */
+/* 7 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 8 */,
+/* 9 */,
+/* 10 */,
+/* 11 */,
+/* 12 */,
+/* 13 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(5);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _classnames = __webpack_require__(6);
+	
+	var _classnames2 = _interopRequireDefault(_classnames);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var propTypes = {
+	  icon: _react.PropTypes.string,
+	  show: _react.PropTypes.bool
+	};
+	
+	var defaultProps = {
+	  icon: ''
+	};
+	
+	var Toast = function (_React$Component) {
+	  _inherits(Toast, _React$Component);
+	
+	  function Toast() {
+	    _classCallCheck(this, Toast);
+	
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Toast).apply(this, arguments));
+	  }
+	
+	  return Toast;
+	}(_react2.default.Component);
+	
+	exports.default = Toast;
+
+/***/ },
+/* 14 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(5);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _classnames = __webpack_require__(6);
+	
+	var _classnames2 = _interopRequireDefault(_classnames);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var propTypes = {
+	  value: _react.PropTypes.string
+	};
+	
+	var Icon = function (_React$Component) {
+	  _inherits(Icon, _React$Component);
+	
+	  function Icon() {
+	    _classCallCheck(this, Icon);
+	
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Icon).apply(this, arguments));
+	  }
+	
+	  _createClass(Icon, [{
+	    key: 'render',
+	    value: function render() {
+	      var _props = this.props;
+	      var value = _props.value;
+	      var children = _props.children;
+	
+	      if (!this.props.value) {
+	        return null;
+	      }
+	      var css = (0, _classnames2.default)(_defineProperty({}, 'ion-' + value, true));
+	      return _react2.default.createElement(
+	        'i',
+	        { className: css },
+	        children
+	      );
+	    }
+	  }]);
+	
+	  return Icon;
+	}(_react2.default.Component);
+	
+	exports.default = Icon;
 
 /***/ }
 /******/ ])
