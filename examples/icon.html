@@ -39,12 +39,13 @@
 		<script type="text/babel">
 			var ButtonOnClick = function (e) {
 				e.preventDefault();
+				console.log(e);
 			}
 			var Icon = Kodo.Icon;
 			var Button = Kodo.Button;
 			ReactDOM.render((
 				<div>
-					<Button href="https://github.com">
+					<Button href="https://github.com" onClick={ButtonOnClick.bind(this)}>
 						<Icon value="jet"></Icon>
 						<span className="page_pd">ion-jet</span>
 					</Button>

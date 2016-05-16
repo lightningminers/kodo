@@ -37,17 +37,54 @@
 		<script src="../dist/kodo.js" charset="utf-8"></script>
 		<script type="text/babel">
 			var ButtonOnClick = function (e) {
+        console.log(e);
         console.log(this);
 			};
 			var Icon = Kodo.Icon;
 			var Button = Kodo.Button;
+      var Toast = Kodo.Toast;
+
+      class Toasts extends React.Component {
+
+        constructor(props){
+          super(props);
+          this.state = {
+            show: false
+          };
+          this.showToast = null;
+        }
+
+        controlToast (){
+          var show = this.state.show ? false : true;
+          this.setState({
+            show: show
+          });
+        }
+
+        buttonEvents (e){
+          this.showToast = setTimeout(()=>{
+            this.controlToast();
+          },2000);
+          this.controlToast();
+        }
+
+        render (){
+          const { show } = this.state;
+
+          return (
+            <div>
+              <Button type="warn" onClick={this.buttonEvents.bind(this)}>
+                <Icon value="alert-circled"></Icon>
+                警告
+              </Button>
+              <Toast icon="alert-circled" show={ show }>警告</Toast>
+            </div>
+          );
+        }
+      }
+
 			ReactDOM.render((
-				<div>
-					<Button type="warn" onClick={ ButtonOnClick.bind(this) }>
-						<Icon value="alert-circled"></Icon>
-						警告
-					</Button>
-				</div>
+				<Toasts />
 			),document.getElementById('app'));
 		</script>
   </body>

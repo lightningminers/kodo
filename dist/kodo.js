@@ -272,6 +272,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
 	var _react = __webpack_require__(5);
 	
 	var _react2 = _interopRequireDefault(_react);
@@ -279,6 +281,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	var _classnames = __webpack_require__(6);
 	
 	var _classnames2 = _interopRequireDefault(_classnames);
+	
+	var _mask = __webpack_require__(16);
+	
+	var _mask2 = _interopRequireDefault(_mask);
+	
+	var _icon = __webpack_require__(14);
+	
+	var _icon2 = _interopRequireDefault(_icon);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -294,7 +304,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 	
 	var defaultProps = {
-	  icon: ''
+	  icon: '',
+	  show: false
 	};
 	
 	var Toast = function (_React$Component) {
@@ -305,6 +316,33 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Toast).apply(this, arguments));
 	  }
+	
+	  _createClass(Toast, [{
+	    key: 'render',
+	    value: function render() {
+	      var _props = this.props;
+	      var show = _props.show;
+	      var children = _props.children;
+	      var icon = _props.icon;
+	
+	
+	      return _react2.default.createElement(
+	        'div',
+	        { style: { display: show ? 'block' : 'none' } },
+	        _react2.default.createElement(_mask2.default, null),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'kodo_toast' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'kodo_toast_position' },
+	            _react2.default.createElement(_icon2.default, { value: icon }),
+	            children
+	          )
+	        )
+	      );
+	    }
+	  }]);
 	
 	  return Toast;
 	}(_react2.default.Component);
@@ -377,6 +415,23 @@ return /******/ (function(modules) { // webpackBootstrap
 	}(_react2.default.Component);
 	
 	exports.default = Icon;
+
+/***/ },
+/* 15 */,
+/* 16 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	function Mask() {
+	  return React.createElement("div", { className: "kodo_mask_transparent" });
+	}
+	
+	exports.default = Mask;
 
 /***/ }
 /******/ ])
