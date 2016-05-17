@@ -33,15 +33,83 @@
 				e.preventDefault();
 			}
 			var Button = Kodo.Button;
+      var Dialog = Kodo.Dialog;
+
+      class Actions extends React.Component {
+        constructor(props){
+          super(props);
+          this.state = {
+            alertShow: false,
+            confirmShow: false
+          }
+        }
+
+        actionsHandler (type){
+          if (type === 'alert') {
+            const show = this.state.alertShow ? false : true;
+            this.setState({
+              alertShow: show
+            });
+          } else {
+            const show = this.state.confirmShow ? false : true;
+            this.setState({
+              confirmShow: show
+            });
+          }
+        }
+
+        alertHandler (e){
+          this.actionsHandler('alert');
+        }
+
+        confirmHandler (e){
+          this.actionsHandler();
+        }
+
+        render (){
+          const buttons = [
+            {
+              idx: '1',
+              type: 'warn',
+              label: '取消',
+              onClick: (e) => {
+                this.actionsHandler();
+              }
+            },
+            {
+              idx: '2',
+              label: '确定',
+              onClick: (e) => {
+                this.actionsHandler();
+              }
+            }
+          ];
+          const alertButtons = [
+            {
+              idx: '1',
+              label: '确定',
+              onClick: (e) => {
+                this.actionsHandler('alert');
+              }
+            }
+          ];
+          const { alertShow, confirmShow } = this.state;
+          return (
+            <div>
+              <Button type="warn" onClick={ this.alertHandler.bind(this) } style={{marginTop:'5px',marginBottom:'5px'}}>
+                点击弹出Dialog 样式一（Alert）
+              </Button>
+              <Button onClick={ this.confirmHandler.bind(this) }>
+                点击弹出Dialog 样式二 （Confirm）
+              </Button>
+              <Dialog show={alertShow} type="alert" title="Alert" buttons={ alertButtons }>Hello Alert</Dialog>
+              <Dialog show={confirmShow} type="confirm" title="confirm" buttons={ buttons }>Hello Confirm</Dialog>
+            </div>
+          );
+        }
+      }
 			ReactDOM.render((
-				<div>
-					<Button type="warn" href="https://github.com/icepy" onClick={ ButtonOnClick.bind(this) }>@github icepy</Button>
-					<Button href="https://github.com/icepy" onClick={ ButtonOnClick.bind(this) }>@github icepy</Button>
-					<Button disabled={true} href="https://github.com/icepy" onClick={ ButtonOnClick.bind(this) }>@github icepy</Button>
-					<Button disabled={true}>禁止按钮</Button>
-					<Button type="plain">Plain 按钮</Button>
-					<Button>确定button</Button>
-				</div>
+          <Actions />
 			),document.getElementById('app'));
 		</script>
   </body>

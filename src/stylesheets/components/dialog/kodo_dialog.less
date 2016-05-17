@@ -1,0 +1,56 @@
+.kodo_dialog{
+  position: fixed;
+  z-index: 15;
+  width: 85%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: rgb(250, 250, 252);
+  text-align: center;
+  border-radius: 5px;
+  .kodo_dialog_title{
+    padding: 1.2em 0 .5em;
+    strong{
+      font-weight: 400;
+      font-size: 16px;
+    }
+  }
+  .kodo_dialog_container{
+    padding: 0 20px;
+    font-size: 15px;
+    color: @textColor;
+    word-wrap: break-word;
+    word-break: break-all;
+  }
+  .kodo_dialog_footer{
+    position: relative;
+    line-height: 42px;
+    margin-top: 20px;
+    font-size: 17px;
+  }
+  .kodo_dialog_footer:after{
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 1px;
+    border-top: 1px solid #D5D5D6;
+    color: #D5D5D6;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+  }
+}
+.kodo_dialog_confirm{
+  .kodo_dialog_footer{
+    a:after{
+      border-left: 1px solid #D5D5D6;
+      -webkit-transform-origin: 0 0;
+      transform-origin: 0 0;
+      -webkit-transform: scaleX(0.5);
+      transform: scaleX(0.5);
+    }
+  }
+}

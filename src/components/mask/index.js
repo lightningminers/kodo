@@ -1,7 +1,13 @@
+import classNames from 'classnames';
 
-function Mask(){
+function Mask(props){
+  const { type } = props;
+  const css = classNames({
+    kodo_mask_transparent: true,
+    ['kodo_mask_'+ type]: !!type
+  });
   return (
-    <div className="kodo_mask_transparent"></div>
+    <div className={ css }></div>
   );
 }
 
