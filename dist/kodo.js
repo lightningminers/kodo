@@ -7,7 +7,7 @@
 		exports["Kodo"] = factory(require("react"));
 	else
 		root["Kodo"] = factory(root["React"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE_10__) {
+})(this, function(__WEBPACK_EXTERNAL_MODULE_11__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -56,17 +56,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 	
-	var _button = __webpack_require__(8);
+	var _button = __webpack_require__(9);
 	
-	var _toast = __webpack_require__(12);
+	var _toast = __webpack_require__(13);
 	
 	var _toast2 = _interopRequireDefault(_toast);
 	
-	var _icon = __webpack_require__(14);
+	var _icon = __webpack_require__(15);
 	
 	var _icon2 = _interopRequireDefault(_icon);
 	
-	var _dialog = __webpack_require__(17);
+	var _dialog = __webpack_require__(16);
 	
 	var _dialog2 = _interopRequireDefault(_dialog);
 	
@@ -79,7 +79,7 @@ return /******/ (function(modules) { // webpackBootstrap
 		Dialog: _dialog2.default
 	};
 	
-	__webpack_require__(15);
+	__webpack_require__(20);
 
 /***/ },
 /* 1 */,
@@ -89,12 +89,13 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 5 */,
 /* 6 */,
 /* 7 */,
-/* 8 */
+/* 8 */,
+/* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var _button = __webpack_require__(9);
+	var _button = __webpack_require__(10);
 	
 	var _button2 = _interopRequireDefault(_button);
 	
@@ -105,7 +106,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 9 */
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -118,11 +119,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _react = __webpack_require__(10);
+	var _react = __webpack_require__(11);
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _classnames = __webpack_require__(11);
+	var _classnames = __webpack_require__(12);
 	
 	var _classnames2 = _interopRequireDefault(_classnames);
 	
@@ -202,13 +203,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = Button;
 
 /***/ },
-/* 10 */
+/* 11 */
 /***/ function(module, exports) {
 
-	module.exports = __WEBPACK_EXTERNAL_MODULE_10__;
+	module.exports = __WEBPACK_EXTERNAL_MODULE_11__;
 
 /***/ },
-/* 11 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -262,7 +263,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 12 */
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -273,19 +274,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _react = __webpack_require__(10);
+	var _react = __webpack_require__(11);
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _classnames = __webpack_require__(11);
+	var _classnames = __webpack_require__(12);
 	
 	var _classnames2 = _interopRequireDefault(_classnames);
 	
-	var _mask = __webpack_require__(13);
+	var _mask = __webpack_require__(14);
 	
 	var _mask2 = _interopRequireDefault(_mask);
 	
-	var _icon = __webpack_require__(14);
+	var _icon = __webpack_require__(15);
 	
 	var _icon2 = _interopRequireDefault(_icon);
 	
@@ -349,7 +350,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = Toast;
 
 /***/ },
-/* 13 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -358,7 +359,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	
-	var _classnames = __webpack_require__(11);
+	var _classnames = __webpack_require__(12);
 	
 	var _classnames2 = _interopRequireDefault(_classnames);
 	
@@ -378,7 +379,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = Mask;
 
 /***/ },
-/* 14 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -389,11 +390,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _react = __webpack_require__(10);
+	var _react = __webpack_require__(11);
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _classnames = __webpack_require__(11);
+	var _classnames = __webpack_require__(12);
 	
 	var _classnames2 = _interopRequireDefault(_classnames);
 	
@@ -445,14 +446,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = Icon;
 
 /***/ },
-/* 15 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 16 */,
-/* 17 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -463,19 +457,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _react = __webpack_require__(10);
+	var _react = __webpack_require__(11);
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _classnames = __webpack_require__(11);
+	var _classnames = __webpack_require__(12);
 	
 	var _classnames2 = _interopRequireDefault(_classnames);
 	
-	var _mask = __webpack_require__(13);
+	var _mask = __webpack_require__(14);
 	
 	var _mask2 = _interopRequireDefault(_mask);
 	
-	var _Alert = __webpack_require__(18);
+	var _Alert = __webpack_require__(17);
 	
 	var _Alert2 = _interopRequireDefault(_Alert);
 	
@@ -551,7 +545,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = Dialog;
 
 /***/ },
-/* 18 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -560,7 +554,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	
-	var _buttons = __webpack_require__(20);
+	var _buttons = __webpack_require__(18);
 	
 	var _buttons2 = _interopRequireDefault(_buttons);
 	
@@ -599,6 +593,37 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = Alert;
 
 /***/ },
+/* 18 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	function renderButtons(buttons) {
+	  return buttons.map(function (action, idx) {
+	    var label = action.label;
+	
+	    var type = action.type || 'plain';
+	    return React.createElement(
+	      "a",
+	      _extends({}, action, {
+	        type: type,
+	        key: idx,
+	        href: "javascript:;"
+	      }),
+	      label
+	    );
+	  });
+	}
+	
+	exports.default = renderButtons;
+
+/***/ },
 /* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -608,7 +633,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	
-	var _buttons = __webpack_require__(20);
+	var _buttons = __webpack_require__(18);
 	
 	var _buttons2 = _interopRequireDefault(_buttons);
 	
@@ -650,32 +675,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 20 */
 /***/ function(module, exports) {
 
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-	
-	function renderButtons(buttons) {
-	  return buttons.map(function (action, idx) {
-	    var label = action.label;
-	
-	    var type = action.type || 'plain';
-	    return React.createElement(
-	      "a",
-	      _extends({}, action, {
-	        type: type,
-	        key: idx,
-	        href: "javascript:;"
-	      }),
-	      label
-	    );
-	  });
-	}
-	
-	exports.default = renderButtons;
+	// removed by extract-text-webpack-plugin
 
 /***/ }
 /******/ ])
