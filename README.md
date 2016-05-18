@@ -26,13 +26,14 @@ react UI Library !!! 欢迎大家关注我的trello：[https://trello.com/b/L6oh
 
 - css样式参考了Amazeui，weui的部分UI样式
 - 使用了*normalize.css*来初始化css
+- 使用了classnames来处理class类名
 
 ## 关注微信公众号
+
+**开通于2016年，内容起于前端而不止于前端，欢迎大家关注**
 
 <div align="center">
 <img src="https://raw.githubusercontent.com/icepy/_posts/master/img/weixin.jpg" alt=""/><br>
 </div>
 
-**开通于2016年，内容起于前端而不止于前端，欢迎大家关注**
-
-MIT
+kodo项目遵循@MIT协议开源。
