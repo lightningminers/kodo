@@ -21,6 +21,10 @@
 
 ![](https://raw.githubusercontent.com/icepy/_posts/master/img/weixin.jpg)
 
+## 书籍阅读
+
+[和我一起实战react](https://icepy.gitbooks.io/follow-react/content/index.html)
+
 ## How Run
 
 通过命令`npm install`来安装所需要的依赖环境，你可以运行`npm run dev`来构建kodo项目，运行`npm run dev-server`来启动一个服务器。
