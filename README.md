@@ -1,5 +1,7 @@
 # kodo
 
+[![Build Status](https://travis-ci.org/mulgore/kodo.svg?branch=master)](https://travis-ci.org/mulgore/kodo)
+
 react UI Library !!! 欢迎大家关注我的trello：[https://trello.com/b/L6ohrKhq](https://trello.com/b/L6ohrKhq)来了解第一阶段需要实现的组件。UI设计部分原则上跟随iOS的设计，你可以查看[UI and Design](https://developer.apple.com/resources/)来获取UI设计的帮助，但是大部分的参考还是从Amazeui和weui而来。
 
 ## How Run
@@ -24,3 +26,13 @@ react UI Library !!! 欢迎大家关注我的trello：[https://trello.com/b/L6oh
 
 - css样式参考了Amazeui，weui的部分UI样式
 - 使用了*normalize.css*来初始化css
+
+## 关注微信公众号
+
+<div align="center">
+<img src="https://raw.githubusercontent.com/icepy/_posts/master/img/weixin.jpg" alt=""/><br>
+</div>
+
+**开通于2016年，内容起于前端而不止于前端，欢迎大家关注**
+
+MIT
