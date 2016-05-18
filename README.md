@@ -48,5 +48,6 @@
 - css样式参考了Amazeui，weui的部分UI样式
 - 使用了*normalize.css*来初始化css
 - 使用了classnames来处理class类名
+- UI设计部分参考了iOS的设计原则，你可以访问[UI and Design](https://developer.apple.com/resources/)来获取UI设计的帮助
 
 kodo项目遵循@MIT协议开源。
