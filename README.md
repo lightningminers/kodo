@@ -2,7 +2,24 @@
 
 [![Build Status](https://travis-ci.org/mulgore/kodo.svg?branch=master)](https://travis-ci.org/mulgore/kodo)
 
-react UI Library !!! 欢迎大家关注我的trello：[https://trello.com/b/L6ohrKhq](https://trello.com/b/L6ohrKhq)来了解第一阶段需要实现的组件。UI设计部分原则上跟随iOS的设计，你可以查看[UI and Design](https://developer.apple.com/resources/)来获取UI设计的帮助，但是大部分的参考还是从Amazeui和weui而来。
+**注意事项**
+
+本次课程面向初中级前端开发人员以及对react感兴趣的其他开发者，同时我希望你能具备如下知识的储备。
+
+- 可以使用npm
+- 熟悉一些基础的ES2015语法
+- Git的基础操作
+- HTML/CSS/JavaScript基础知识
+- Sublime，Atom，WebStorm的基础使用
+- Chrome调试
+
+本次课程的源代码放置在[kodo](https://github.com/mulgore/kodo)项目中，你可以在此获取源代码。
+
+本次课程的任务管理使用了Trello，你可以访问[https://trello.com/b/L6ohrKhq](https://trello.com/b/L6ohrKhq)来了解实战项目的进度和计划安排。
+
+如果对课程及内容有任何反馈，可以在[issues](https://github.com/mulgore/kodo/issues)中发起你的需求。或者关注我的微信公众号：fed_talk，来向我反馈。
+
+![](https://raw.githubusercontent.com/icepy/_posts/master/img/weixin.jpg)
 
 ## How Run
 
@@ -27,13 +44,5 @@ react UI Library !!! 欢迎大家关注我的trello：[https://trello.com/b/L6oh
 - css样式参考了Amazeui，weui的部分UI样式
 - 使用了*normalize.css*来初始化css
 - 使用了classnames来处理class类名
-
-## 关注微信公众号
-
-**开通于2016年，内容起于前端而不止于前端，欢迎大家关注**
-
-<div align="center">
-<img src="https://raw.githubusercontent.com/icepy/_posts/master/img/weixin.jpg" alt=""/><br>
-</div>
 
 kodo项目遵循@MIT协议开源。
