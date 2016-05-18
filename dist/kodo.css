@@ -523,6 +523,15 @@ button.kodo_btn:focus {
   flex: 1;
   text-decoration: none;
 }
+.kodo_dialog .kodo_dialog_footer a.kodo_buttons_warn {
+  color: #E64340;
+}
+.kodo_dialog .kodo_dialog_footer a.kodo_buttons_plain {
+  color: #5A5A5A;
+}
+.kodo_dialog .kodo_dialog_footer a.kodo_buttons_default {
+  color: #225fba;
+}
 .kodo_dialog .kodo_dialog_footer:after {
   content: " ";
   position: absolute;
