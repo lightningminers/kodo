@@ -32,3 +32,5 @@ react UI Library !!! 欢迎大家关注我的trello：[https://trello.com/b/L6oh
 </div>
 
 **开通于2016年，内容起于前端而不止于前端，欢迎大家关注**
+
+MIT
