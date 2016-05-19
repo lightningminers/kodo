@@ -33,7 +33,6 @@
 				<h1 class="page_title">Icon</h1>
 			</div>
 		</div>
-		<h1>这里的icon使用了ionic framework icon 2.0.1</h1>
 		<div id="app"></div>
 		<script src="../dist/kodo.js" charset="utf-8"></script>
 		<script type="text/babel">
@@ -45,12 +44,12 @@
 			var Button = Kodo.Button;
 			ReactDOM.render((
 				<div>
-					<Button href="https://github.com" onClick={ButtonOnClick.bind(this)}>
-						<Icon value="jet"></Icon>
+					<Button onClick={ButtonOnClick.bind(this)} style={{margin:'5px'}}>
+						<Icon value="checkbox"></Icon>
 						<span className="page_pd">ion-jet</span>
 					</Button>
 					<Button type="warn">
-						<Icon value="alert-circled"></Icon>
+						<Icon value="checkbox" status="active"></Icon>
 						警告
 					</Button>
 				</div>

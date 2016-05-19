@@ -2,17 +2,25 @@ import React,{ PropTypes } from 'react';
 import classNames from 'classnames';
 
 const propTypes = {
-  value: PropTypes.string
+  value: PropTypes.string,
+  status: PropTypes.string
+};
+
+const defaultProps = {
+  value: '',
+  status: ''
 };
 
 class Icon extends React.Component {
   render (){
-    const {value, children} = this.props;
+    const {value, children, status,className } = this.props;
     if (!this.props.value) {
       return null;
     }
     let css = classNames({
-      ['ion-'+value]:true
+      ['icon-'+value]:true,
+      [status]: !!status,
+      [className]: className
     });
     return (
       <i className= {css}>

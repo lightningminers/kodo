@@ -9,5 +9,3 @@ module.exports = {
 	Icon: Icon,
 	Dialog: Dialog
 }
-
-require('./stylesheets/index.less');

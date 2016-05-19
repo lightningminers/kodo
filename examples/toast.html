@@ -73,8 +73,7 @@
 
           return (
             <div>
-              <Button type="warn" onClick={this.buttonEvents.bind(this)}>
-                <Icon value="alert-circled"></Icon>
+              <Button type="warn" onClick={this.buttonEvents.bind(this)} style={{margin:'5px'}}>
                 警告
               </Button>
               <Toast icon="alert-circled" show={ show }>警告</Toast>

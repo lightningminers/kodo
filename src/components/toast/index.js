@@ -1,6 +1,5 @@
 import React,{ PropTypes } from 'react';
 import classNames from 'classnames';
-import Mask from '../mask/';
 import Icon from '../icon/'
 
 const propTypes = {
@@ -16,18 +15,20 @@ const defaultProps = {
 class Toast extends React.Component {
 
   render (){
-    const { show, children, icon } = this.props;
-
+    const { show, children, icon, className } = this.props;
+    const css = classNames({
+      'toast-wrap':true,
+      'active': show,
+      [className]: className
+    });
     return (
-      <div style={{display: show ? 'block': 'none'}}>
-        <Mask />
-        <div className="kodo_toast">
-          <div className="kodo_toast_position">
-            <Icon value={icon}></Icon>
-            { children }
-          </div>
+      <section
+        className={ css }
+      >
+        <div className="toast">
+          <p className="toast-txt">{ children }</p>
         </div>
-      </div>
+      </section>
     );
   }
 }

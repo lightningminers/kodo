@@ -12,6 +12,8 @@
 
 互动帮助指引可以阅读[课程指引](https://github.com/mulgore/kodo/wiki/%E8%AF%BE%E7%A8%8B%E6%8C%87%E5%BC%95)，kodo项目的预期是通过互动互助的学习方式，编写一个适用于移动端的react UI 库。
 
+**注意examples目录下的Demo文件运行起来你还需要下载[browser.min.js](https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js)文件放在kodo项目的根目录，当然你也可以直接引用https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js，不过网络非常的慢。**
+
 ## 感谢
 
 感谢好友[为之](https://github.com/marvin1023)提供了CSS样本[sheral](https://github.com/imweb/sheral)项目。

@@ -4,11 +4,6 @@ var plugins = [];
 var env = process.env.NODE_ENV;
 var containerPath = path.resolve('.');
 
-if (env !== 'production') {
-}
-
-plugins.push(extractLess)
-
 var config = {
 	entry: './src/index.js',
 	devtool: 'source-map',

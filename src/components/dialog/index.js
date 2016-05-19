@@ -23,19 +23,18 @@ class Dialog extends React.Component {
   render (){
     const { type, show, className, title } = this.props;
     const css = classNames({
-      'kodo_dialog_alert': type === 'alert',
-      'kodo_dialog_confirm': type === 'confirm',
+      'dialog-wrap': true,
+      'active': show,
       [className]: className
     });
     const Component = type === 'alert' ? Alert : Confirm;
     return (
-      <div
+      <section
         className={ css }
-        style={{display: show ? 'block' : 'none'}}
       >
         <Mask type="dialog"/>
-        <Component {...this.props } />
-      </div>
+        <Component {...this.props }/>
+      </section>
     );
   }
 }

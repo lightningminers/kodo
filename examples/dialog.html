@@ -40,48 +40,87 @@
           super(props);
           this.state = {
             alertShow: false,
-            confirmShow: false
+            alertNoTitle: false,
+            alertEndways: false,
+            confirmShow: false,
+            confirmNoTitle: false
           }
         }
 
-        actionsHandler (type){
+        actionsHandler (type,num){
           if (type === 'alert') {
-            const show = this.state.alertShow ? false : true;
-            this.setState({
-              alertShow: show
-            });
+            if (num === 1) {
+              const show = this.state.alertShow ? false : true;
+              this.setState({
+                alertShow: show
+              });
+            }
+            if (num === 2) {
+              const show = this.state.alertNoTitle ? false : true;
+              this.setState({
+                alertNoTitle: show
+              });
+            }
+            if (num === 3) {
+              const show = this.state.alertEndways ? false : true;
+              this.setState({
+                alertEndways: show
+              });
+            }
           } else {
-            const show = this.state.confirmShow ? false : true;
-            this.setState({
-              confirmShow: show
-            });
+            if (num === 1) {
+              const show = this.state.confirmShow ? false : true;
+              this.setState({
+                confirmShow: show
+              });
+            }
+            if (num === 2) {
+              const show = this.state.confirmNoTitle ? false : true;
+              this.setState({
+                confirmNoTitle: show
+              });
+            }
           }
         }
 
-        alertHandler (e){
-          this.actionsHandler('alert');
+        alertHandler (idx,e){
+          this.actionsHandler('alert',idx);
         }
 
-        confirmHandler (e){
-          this.actionsHandler();
+        confirmHandler (idx,e){
+          this.actionsHandler('',idx);
         }
 
         render (){
           const buttons = [
             {
               idx: '1',
-              type: 'warn',
               label: '取消',
               onClick: (e) => {
-                this.actionsHandler();
+                this.actionsHandler('',1);
               }
             },
             {
               idx: '2',
               label: '确定',
-              type: 'default',
               onClick: (e) => {
-                this.actionsHandler();
+                this.actionsHandler('',1);
+              }
+            }
+          ];
+          const buttonsNoTitle = [
+            {
+              idx: '1',
+              label: '取消',
+              onClick: (e) => {
+                this.actionsHandler('',2);
+              }
+            },
+            {
+              idx: '2',
+              label: '确定',
+              onClick: (e) => {
+                this.actionsHandler('',2);
               }
             }
           ];
@@ -89,23 +128,59 @@
             {
               idx: '1',
               label: '确定',
-              type: 'default',
               onClick: (e) => {
-                this.actionsHandler('alert');
+                this.actionsHandler('alert',1);
               }
             }
           ];
-          const { alertShow, confirmShow } = this.state;
+          const alertNoTitltButtons = [
+            {
+              idx: 2,
+              label: '确定',
+              onClick: (e) => {
+                this.actionsHandler('alert',2)
+              }
+            }
+          ];
+          const buttonsEndways = [
+            {
+              idx: '1',
+              label: '取消',
+              onClick: (e) => {
+                this.actionsHandler('alert',3);
+              }
+            },
+            {
+              idx: '2',
+              label: '确定',
+              onClick: (e) => {
+                this.actionsHandler('alert',3);
+              }
+            }
+          ];
+          const { alertShow, alertNoTitle, alertEndways, confirmShow, confirmNoTitle } = this.state;
           return (
             <div>
-              <Button type="warn" onClick={ this.alertHandler.bind(this) } style={{marginTop:'5px',marginBottom:'5px'}}>
-                点击弹出Dialog 样式一（Alert）
+              <Button onClick={ this.alertHandler.bind(this,1) } style={{marginTop:'5px',marginBottom:'5px'}}>
+                点击弹出Dialog 样式一（Alert）带title
               </Button>
-              <Button onClick={ this.confirmHandler.bind(this) }>
-                点击弹出Dialog 样式二 （Confirm）
+              <Button onClick={ this.alertHandler.bind(this,2) } style={{marginTop:'5px',marginBottom:'5px'}}>
+                点击弹出Dialog 样式二（Alert）不带title
+              </Button>
+              <Button onClick={ this.alertHandler.bind(this,3) } style={{marginTop:'5px',marginBottom:'5px'}}>
+                点击弹出Dialog 样式三（Alert）竖排列按钮
+              </Button>
+              <Button onClick={ this.confirmHandler.bind(this,1) } style={{marginTop:'5px',marginBottom:'5px'}}>
+                点击弹出Dialog 样式四 （Confirm）带title
+              </Button>
+              <Button onClick={ this.confirmHandler.bind(this,2) } style={{marginTop:'5px',marginBottom:'5px'}}>
+                点击弹出Dialog 样式五 （Confirm）不带title
               </Button>
               <Dialog show={alertShow} type="alert" title="Alert" buttons={ alertButtons }>Hello Alert</Dialog>
+              <Dialog show={alertNoTitle} type="alert" buttons={ alertNoTitltButtons }>Hello Alert No Title</Dialog>
+              <Dialog show={alertEndways} type="alert" buttons= { buttonsEndways }>竖排列按钮Dialog !!!</Dialog>
               <Dialog show={confirmShow} type="confirm" title="confirm" buttons={ buttons }>Hello Confirm</Dialog>
+              <Dialog show={confirmNoTitle} type="confirm" buttons={ buttonsNoTitle }>Hello Confirm No Title</Dialog>
             </div>
           );
         }
