@@ -1,13 +1,10 @@
 var path = require('path');
 var webpack = require('webpack');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var extractLess = new ExtractTextPlugin('kodo-min.css');
 var plugins = [];
 var env = process.env.NODE_ENV;
 var containerPath = path.resolve('.');
 
 if (env !== 'production') {
-	extractLess = new ExtractTextPlugin('kodo.css');
 }
 
 plugins.push(extractLess)
@@ -30,10 +27,6 @@ var config = {
 				query: {
           presets: ['react','es2015']
         }
-			},
-			{
-				test: /\.less$/,
-				loader: extractLess.extract(['css','less'])
 			}
 		]
 	},
