@@ -44,11 +44,11 @@
 			var Button = Kodo.Button;
 			ReactDOM.render((
 				<div>
-					<Button onClick={ButtonOnClick.bind(this)} style={{margin:'5px'}}>
+					<Button type="stress" onClick={ButtonOnClick.bind(this)} style={{margin: 5}}>
 						<Icon value="checkbox"></Icon>
 						<span className="page_pd">ion-jet</span>
 					</Button>
-					<Button type="warn">
+					<Button style={{margin: 5}}>
 						<Icon value="checkbox" status="active"></Icon>
 						警告
 					</Button>

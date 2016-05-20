@@ -1,4 +1,4 @@
-import { Button } from './components/button/';
+import Button from './components/button/';
 import Toast from './components/toast/';
 import Icon from './components/icon/';
 import Dialog from './components/dialog/';

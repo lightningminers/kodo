@@ -161,19 +161,19 @@
           const { alertShow, alertNoTitle, alertEndways, confirmShow, confirmNoTitle } = this.state;
           return (
             <div>
-              <Button onClick={ this.alertHandler.bind(this,1) } style={{marginTop:'5px',marginBottom:'5px'}}>
+              <Button type="outline" onClick={ this.alertHandler.bind(this,1) } style={{margin:5}}>
                 点击弹出Dialog 样式一（Alert）带title
               </Button>
-              <Button onClick={ this.alertHandler.bind(this,2) } style={{marginTop:'5px',marginBottom:'5px'}}>
+              <Button type="primary" onClick={ this.alertHandler.bind(this,2) } style={{margin:5}}>
                 点击弹出Dialog 样式二（Alert）不带title
               </Button>
-              <Button onClick={ this.alertHandler.bind(this,3) } style={{marginTop:'5px',marginBottom:'5px'}}>
+              <Button type="stress" onClick={ this.alertHandler.bind(this,3) } style={{margin:5}}>
                 点击弹出Dialog 样式三（Alert）竖排列按钮
               </Button>
-              <Button onClick={ this.confirmHandler.bind(this,1) } style={{marginTop:'5px',marginBottom:'5px'}}>
+              <Button type="outline" onClick={ this.confirmHandler.bind(this,1) } style={{margin:5}}>
                 点击弹出Dialog 样式四 （Confirm）带title
               </Button>
-              <Button onClick={ this.confirmHandler.bind(this,2) } style={{marginTop:'5px',marginBottom:'5px'}}>
+              <Button onClick={ this.confirmHandler.bind(this,2) } style={{margin:5}}>
                 点击弹出Dialog 样式五 （Confirm）不带title
               </Button>
               <Dialog show={alertShow} type="alert" title="Alert" buttons={ alertButtons }>Hello Alert</Dialog>

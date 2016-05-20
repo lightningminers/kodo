@@ -58,6 +58,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _button = __webpack_require__(1);
 	
+	var _button2 = _interopRequireDefault(_button);
+	
 	var _toast = __webpack_require__(5);
 	
 	var _toast2 = _interopRequireDefault(_toast);
@@ -73,7 +75,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	module.exports = {
-		Button: _button.Button,
+		Button: _button2.default,
 		Toast: _toast2.default,
 		Icon: _icon2.default,
 		Dialog: _dialog2.default
@@ -81,22 +83,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 /* 1 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	var _button = __webpack_require__(2);
-	
-	var _button2 = _interopRequireDefault(_button);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	module.exports = {
-		Button: _button2.default
-	};
-
-/***/ },
-/* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -132,16 +118,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	 */
 	
 	var propTypes = {
-		component: _react.PropTypes.node, //	自定义的button组件
-		size: _react.PropTypes.string, //	按钮大小
-		type: _react.PropTypes.string, //	按钮的类型
-		disabled: _react.PropTypes.bool //	是否禁用
+		component: _react.PropTypes.node,
+		size: _react.PropTypes.string,
+		type: _react.PropTypes.string,
+		disabled: _react.PropTypes.bool
 	};
 	
 	var defaultProps = {
-		size: 'normal',
-		type: 'default',
-		disabled: false
+		size: 'normal', // full small
+		type: 'btn',
+		disabled: false,
+		tag: 'button'
 	};
 	
 	var Button = function (_React$Component) {
@@ -156,24 +143,20 @@ return /******/ (function(modules) { // webpackBootstrap
 		_createClass(Button, [{
 			key: 'render',
 			value: function render() {
+				var _classNames;
+	
 				var _props = this.props;
 				var type = _props.type;
 				var size = _props.size;
 				var disabled = _props.disabled;
 				var className = _props.className;
-				var component = _props.component;
 				var children = _props.children;
+				var href = _props.href;
+				var tag = _props.tag;
 	
-				var Component = component || (this.props.href ? 'a' : 'button');
-				var css = (0, _classnames2.default)(_defineProperty({
-					kodo_btn: true,
-					kodo_btn_primary: type === 'primary',
-					kodo_btn_default: type === 'default',
-					kodo_btn_plain: type === 'plain',
-					kodo_btn_warn: type === 'warn',
-					kodo_btn_mini: size === 'small',
-					kodo_btn_disabled: disabled
-				}, className, className));
+				var Component = href ? 'a' : tag;
+				var defaultClass = type === 'btn' ? type : 'btn-' + type;
+				var css = (0, _classnames2.default)((_classNames = {}, _defineProperty(_classNames, defaultClass, true), _defineProperty(_classNames, className, className), _defineProperty(_classNames, 'btn-s', size === 'small'), _defineProperty(_classNames, 'full-width btn-m', size === 'full'), _defineProperty(_classNames, 'disabled', disabled), _classNames));
 				return _react2.default.createElement(
 					Component,
 					_extends({}, this.props, {
@@ -193,6 +176,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = Button;
 
 /***/ },
+/* 2 */,
 /* 3 */
 /***/ function(module, exports) {
 

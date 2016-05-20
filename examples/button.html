@@ -35,12 +35,22 @@
 			var Button = Kodo.Button;
 			ReactDOM.render((
 				<div>
-					<Button type="warn" href="https://github.com/icepy" onClick={ ButtonOnClick.bind(this) }>@github icepy</Button>
-					<Button href="https://github.com/icepy" onClick={ ButtonOnClick.bind(this) }>@github icepy</Button>
-					<Button disabled={true} href="https://github.com/icepy" onClick={ ButtonOnClick.bind(this) }>@github icepy</Button>
-					<Button disabled={true}>禁止按钮</Button>
-					<Button type="plain">Plain 按钮</Button>
-					<Button>确定button</Button>
+					<Button href="https://github.com/icepy" onClick={ ButtonOnClick.bind(this) } style={{margin:5}}>
+						default
+					</Button>
+					<Button type="primary" href="https://github.com/icepy" onClick={ ButtonOnClick.bind(this) } style={{margin:5}}>
+						primary
+					</Button>
+					<Button type="stress" href="https://github.com/icepy" onClick={ ButtonOnClick.bind(this) } style={{margin:5}}>
+						stress
+					</Button>
+					<Button type="outline" tag="span" style={{margin:5}}>
+						outline
+					</Button>
+					<Button disabled={true} style={{margin:5}}>disabled</Button>
+
+					<Button type="primary" size="full">Full button</Button>
+					<Button type="stress" size="small" style={{margin:5}}>small button</Button>
 				</div>
 			),document.getElementById('app'));
 		</script>
