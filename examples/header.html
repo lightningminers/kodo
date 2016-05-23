@@ -6,7 +6,7 @@
 		<link rel="stylesheet" href="css/global.css" media="screen" title="no title" charset="utf-8">
 		<script src="../node_modules/react/dist/react.js" charset="utf-8"></script>
 		<script src="../node_modules/react-dom/dist/react-dom.js" charset="utf-8"></script>
-		<script src="../browser.min.js"></script>
+		<script src="http://cdn.bootcss.com/babel-core/5.8.23/browser.min.js"></script>
 		<style>
 			.title{
 				padding: 2em 0;
@@ -33,9 +33,75 @@
 				e.preventDefault();
 			}
 			var Header = Kodo.Header;
+			var leftItem = {
+				icon: 'v-left',
+				methods: {
+					onClick: (e)=>{
+						console.log(this);
+					}
+				}
+			}
+			var IQ2 = {
+				icon: '',
+				text: 'OK',
+				methods: {
+					onClick: (e)=>{
+						console.log(this)
+					}
+				}
+			}
+			var IQ2complex = [
+				{
+					idx: '122',
+					type: 'big',
+					text: 'Hello'
+				},
+				{
+					idx: '133',
+					type: 'small',
+					text: 'hello react'
+				}
+			];
+
+			var IQ3 = [
+				{
+					idx: '1',
+					text: 'dialog',
+					active: true,
+					methods: {
+						onClick: (e)=>{
+							console.log(this);
+						}
+					}
+				},
+				{
+					idx: '2',
+					text: 'icon',
+					methods: {
+						onClick: (e)=>{
+							console.log(this);
+						}
+					}
+				}
+			]
 			ReactDOM.render((
 				<div>
-					<Header title="hello"></Header>	
+					<Header
+						title="hello world"
+						style={{top:50}}
+						leftItem={ leftItem }
+					/>
+
+					<Header
+						style={{top:100}}
+						leftItem={ IQ2 }
+						complex={ IQ2complex }
+					/>
+
+					<Header
+						style={{top:150}}
+						tags={ IQ3 }
+					/>
 				</div>
 			),document.getElementById('app'));
 		</script>

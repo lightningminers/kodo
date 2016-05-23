@@ -13,7 +13,7 @@ const defaultProps = {
 
 class Icon extends React.Component {
   render (){
-    const {value, children, status,className } = this.props;
+    const {value, children, status, className, methods } = this.props;
     if (!this.props.value) {
       return null;
     }
@@ -23,7 +23,10 @@ class Icon extends React.Component {
       [className]: className
     });
     return (
-      <i className= {css}>
+      <i
+        {...methods}
+        className= {css}
+      >
         {children}
       </i>
     );

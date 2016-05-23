@@ -6,16 +6,17 @@ function ComplexTitle (props){
     return null;
   }
   return complex.map((action, idx)=>{
-    const { type, title } = action;
+    const { type, text } = action;
     const css = classNames({
       'tt-l': type === 'big',
       'tt-s': type === 'small'
     });
     return (
       <span
+        key={ idx }
         className={ css }
       >
-        { title }
+        { text }
       </span>
     );
   });

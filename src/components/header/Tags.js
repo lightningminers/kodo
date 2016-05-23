@@ -1,23 +1,24 @@
 import classNames from 'classnames';
 
 function Tags (props){
-  const { tasg } = props;
-  if (!tags.length || tags) {
+  const { tags } = props;
+  console.log(tags);
+  if (!tags.length || !tags) {
     return null;
   }
-  return tasg.map((action, idx)=>{
-    const { active, tag} = action;
+  return tags.map((action, idx)=>{
+    const { active, text, methods} = action;
     const css = classNames({
       'tt-option': true,
       'active': active
     });
     return (
       <span
-        {...action}
+        {...methods}
         key={ idx }
         className={ css }
       >
-        { tag }
+        { text }
       </span>
     );
   });

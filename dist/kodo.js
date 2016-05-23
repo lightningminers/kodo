@@ -72,7 +72,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _dialog2 = _interopRequireDefault(_dialog);
 	
-	var _header = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./components/header/\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	var _header = __webpack_require__(13);
 	
 	var _header2 = _interopRequireDefault(_header);
 	
@@ -339,6 +339,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
 	var _react = __webpack_require__(2);
@@ -388,6 +390,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      var children = _props.children;
 	      var status = _props.status;
 	      var className = _props.className;
+	      var methods = _props.methods;
 	
 	      if (!this.props.value) {
 	        return null;
@@ -395,7 +398,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	      var css = (0, _classnames2.default)((_classNames = {}, _defineProperty(_classNames, 'icon-' + value, true), _defineProperty(_classNames, status, !!status), _defineProperty(_classNames, className, className), _classNames));
 	      return _react2.default.createElement(
 	        'i',
-	        { className: css },
+	        _extends({}, methods, {
+	          className: css
+	        }),
 	        children
 	      );
 	    }
@@ -720,6 +725,372 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 	
 	exports.default = Confirm;
+
+/***/ },
+/* 13 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(2);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _classnames = __webpack_require__(3);
+	
+	var _classnames2 = _interopRequireDefault(_classnames);
+	
+	var _Selector = __webpack_require__(14);
+	
+	var _Selector2 = _interopRequireDefault(_Selector);
+	
+	var _LeftItem = __webpack_require__(17);
+	
+	var _LeftItem2 = _interopRequireDefault(_LeftItem);
+	
+	var _RightItem = __webpack_require__(18);
+	
+	var _RightItem2 = _interopRequireDefault(_RightItem);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var propTypes = {
+	  title: _react.PropTypes.string,
+	  modal: _react.PropTypes.string,
+	  tags: _react.PropTypes.array,
+	  complex: _react.PropTypes.array,
+	  leftItem: _react.PropTypes.object,
+	  rightItem: _react.PropTypes.array
+	};
+	
+	var defaultProps = {
+	  title: '', //标题
+	  tags: [], // 选项标题
+	  complex: [], //复合标题
+	  modal: 'normal', //mutil
+	  leftItem: {
+	    icon: 'v-left',
+	    text: '',
+	    methods: {}
+	  },
+	  rightItem: [{
+	    idx: '1',
+	    icon: 'dots',
+	    text: '',
+	    methods: {}
+	  }]
+	};
+	
+	var Header = function (_React$Component) {
+	  _inherits(Header, _React$Component);
+	
+	  function Header() {
+	    _classCallCheck(this, Header);
+	
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Header).apply(this, arguments));
+	  }
+	
+	  _createClass(Header, [{
+	    key: 'render',
+	    value: function render() {
+	      var _props = this.props;
+	      var leftItem = _props.leftItem;
+	      var style = _props.style;
+	      var rightItem = _props.rightItem;
+	      var methods = leftItem.methods;
+	
+	      return _react2.default.createElement(
+	        'header',
+	        {
+	          style: style,
+	          className: 'header'
+	        },
+	        _react2.default.createElement(
+	          'div',
+	          _extends({}, methods, {
+	            className: 'header-left'
+	          }),
+	          _react2.default.createElement(_LeftItem2.default, { leftItem: leftItem })
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'header-right' },
+	          (0, _RightItem2.default)(rightItem)
+	        ),
+	        _react2.default.createElement(_Selector2.default, this.props)
+	      );
+	    }
+	  }]);
+	
+	  return Header;
+	}(_react2.default.Component);
+	
+	Header.propTypes = propTypes;
+	Header.defaultProps = defaultProps;
+	
+	exports.default = Header;
+
+/***/ },
+/* 14 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _classnames = __webpack_require__(3);
+	
+	var _classnames2 = _interopRequireDefault(_classnames);
+	
+	var _Tags = __webpack_require__(15);
+	
+	var _Tags2 = _interopRequireDefault(_Tags);
+	
+	var _ComplexTitle = __webpack_require__(16);
+	
+	var _ComplexTitle2 = _interopRequireDefault(_ComplexTitle);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function Selector(props) {
+	  var title = props.title;
+	  var tags = props.tags;
+	  var children = props.children;
+	  var modal = props.modal;
+	  var complex = props.complex;
+	
+	  var css = (0, _classnames2.default)({
+	    'page-tt': title && modal === 'normal' || complex && complex.length,
+	    'page-tabs-tt': tags && tags.length && !title,
+	    'page-mutil-tt': modal === 'mutil'
+	  });
+	  var Component = !title && tags && tags.length ? _Tags2.default : _ComplexTitle2.default;
+	  var select = title ? title : Component(props);
+	  return React.createElement(
+	    'h1',
+	    {
+	      className: css
+	    },
+	    select
+	  );
+	}
+	
+	exports.default = Selector;
+
+/***/ },
+/* 15 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	var _classnames = __webpack_require__(3);
+	
+	var _classnames2 = _interopRequireDefault(_classnames);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function Tags(props) {
+	  var tags = props.tags;
+	
+	  console.log(tags);
+	  if (!tags.length || !tags) {
+	    return null;
+	  }
+	  return tags.map(function (action, idx) {
+	    var active = action.active;
+	    var text = action.text;
+	    var methods = action.methods;
+	
+	    var css = (0, _classnames2.default)({
+	      'tt-option': true,
+	      'active': active
+	    });
+	    return React.createElement(
+	      'span',
+	      _extends({}, methods, {
+	        key: idx,
+	        className: css
+	      }),
+	      text
+	    );
+	  });
+	}
+	
+	exports.default = Tags;
+
+/***/ },
+/* 16 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _classnames = __webpack_require__(3);
+	
+	var _classnames2 = _interopRequireDefault(_classnames);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function ComplexTitle(props) {
+	  var complex = props.complex;
+	
+	  if (!complex && !complex.length) {
+	    return null;
+	  }
+	  return complex.map(function (action, idx) {
+	    var type = action.type;
+	    var text = action.text;
+	
+	    var css = (0, _classnames2.default)({
+	      'tt-l': type === 'big',
+	      'tt-s': type === 'small'
+	    });
+	    return React.createElement(
+	      'span',
+	      {
+	        key: idx,
+	        className: css
+	      },
+	      text
+	    );
+	  });
+	}
+	
+	exports.default = ComplexTitle;
+
+/***/ },
+/* 17 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _icon = __webpack_require__(5);
+	
+	var _icon2 = _interopRequireDefault(_icon);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function LeftItem(props) {
+	  var leftItem = props.leftItem;
+	  var icon = leftItem.icon;
+	  var text = leftItem.text;
+	
+	  if (icon) {
+	    return React.createElement(_icon2.default, {
+	      value: icon,
+	      className: "header-icon js-back"
+	    });
+	  } else {
+	    if (text) {
+	      return React.createElement(
+	        "span",
+	        {
+	          className: "header-btn"
+	        },
+	        text
+	      );
+	    } else {
+	      return React.createElement(
+	        "span",
+	        { className: "header-mix" },
+	        React.createElement(_icon2.default, {
+	          value: icon
+	        }),
+	        React.createElement(
+	          "span",
+	          { className: "mix-txt" },
+	          text
+	        )
+	      );
+	    }
+	  }
+	  return null;
+	}
+	
+	exports.default = LeftItem;
+
+/***/ },
+/* 18 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	var _icon = __webpack_require__(5);
+	
+	var _icon2 = _interopRequireDefault(_icon);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function RightItem(props) {
+	  var rightItem = props;
+	  if (!rightItem && !rightItem.length) {
+	    return null;
+	  }
+	  var Component = rightItem.map(function (action, idx) {
+	    var icon = action.icon;
+	    var text = action.text;
+	    var methods = action.methods;
+	
+	    if (icon) {
+	      return React.createElement(_icon2.default, {
+	        methods: methods,
+	        key: idx,
+	        value: icon,
+	        className: "header-icon"
+	      });
+	    } else {
+	      if (text) {
+	        return React.createElement(
+	          "span",
+	          _extends({}, methods, {
+	            key: idx,
+	            className: "header-btn"
+	          }),
+	          text
+	        );
+	      }
+	    }
+	    return null;
+	  });
+	  return Component;
+	}
+	
+	exports.default = RightItem;
 
 /***/ }
 /******/ ])
