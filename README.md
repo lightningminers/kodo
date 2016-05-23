@@ -10,7 +10,9 @@
 
 如果你使用了`npm run dev-server`，你还需要在启动命令之前安装`nodemon`（建议全局安装）。
 
-`watching`这个项目，来接收大家的学习进度和互动信息。
+然后地址栏输入： `http://localhost:3001/examples` 查看demo
+
+希望各位能在github上`watching`这个项目，来接收大家的学习进度和互动信息。
 
 互动帮助指引可以阅读[课程指引](https://github.com/mulgore/kodo/wiki/%E8%AF%BE%E7%A8%8B%E6%8C%87%E5%BC%95)，kodo项目的预期是通过互动互助的学习方式，编写一个适用于移动端的react UI 库。
 
