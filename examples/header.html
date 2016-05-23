@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="css/global.css" media="screen" title="no title" charset="utf-8">
+		<script src="../node_modules/react/dist/react.js" charset="utf-8"></script>
+		<script src="../node_modules/react-dom/dist/react-dom.js" charset="utf-8"></script>
+		<script src="../browser.min.js"></script>
+		<style>
+			.title{
+				padding: 2em 0;
+			}
+			.page_title{
+				color:#225fba;
+				text-align: center;
+				font-size: 34px;
+				font-weight: 400;
+				margin: 0 15px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="title">
+				<h1 class="page_title">Header</h1>
+			</div>
+		</div>
+		<div id="app"></div>
+		<script src="../dist/kodo.js" charset="utf-8"></script>
+		<script type="text/babel">
+			var ButtonOnClick = function (e) {
+				e.preventDefault();
+			}
+			var Header = Kodo.Header;
+			ReactDOM.render((
+				<div>
+					<Header title="hello"></Header>	
+				</div>
+			),document.getElementById('app'));
+		</script>
+	</body>
+</html>

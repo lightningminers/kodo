@@ -7,7 +7,7 @@
 		exports["Kodo"] = factory(require("react"));
 	else
 		root["Kodo"] = factory(root["React"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE_3__) {
+})(this, function(__WEBPACK_EXTERNAL_MODULE_2__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -60,17 +60,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _button2 = _interopRequireDefault(_button);
 	
-	var _toast = __webpack_require__(5);
+	var _toast = __webpack_require__(4);
 	
 	var _toast2 = _interopRequireDefault(_toast);
 	
-	var _icon = __webpack_require__(7);
+	var _icon = __webpack_require__(5);
 	
 	var _icon2 = _interopRequireDefault(_icon);
 	
-	var _dialog = __webpack_require__(8);
+	var _dialog = __webpack_require__(6);
 	
 	var _dialog2 = _interopRequireDefault(_dialog);
+	
+	var _header = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./components/header/\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	
+	var _header2 = _interopRequireDefault(_header);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -78,7 +82,8 @@ return /******/ (function(modules) { // webpackBootstrap
 		Button: _button2.default,
 		Toast: _toast2.default,
 		Icon: _icon2.default,
-		Dialog: _dialog2.default
+		Dialog: _dialog2.default,
+		Header: _header2.default
 	};
 
 /***/ },
@@ -95,11 +100,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _react = __webpack_require__(3);
+	var _react = __webpack_require__(2);
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _classnames = __webpack_require__(4);
+	var _classnames = __webpack_require__(3);
 	
 	var _classnames2 = _interopRequireDefault(_classnames);
 	
@@ -176,14 +181,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = Button;
 
 /***/ },
-/* 2 */,
-/* 3 */
+/* 2 */
 /***/ function(module, exports) {
 
-	module.exports = __WEBPACK_EXTERNAL_MODULE_3__;
+	module.exports = __WEBPACK_EXTERNAL_MODULE_2__;
 
 /***/ },
-/* 4 */
+/* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -237,7 +241,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 5 */
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -248,15 +252,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _react = __webpack_require__(3);
+	var _react = __webpack_require__(2);
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _classnames = __webpack_require__(4);
+	var _classnames = __webpack_require__(3);
 	
 	var _classnames2 = _interopRequireDefault(_classnames);
 	
-	var _icon = __webpack_require__(7);
+	var _icon = __webpack_require__(5);
 	
 	var _icon2 = _interopRequireDefault(_icon);
 	
@@ -326,36 +330,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = Toast;
 
 /***/ },
-/* 6 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _classnames = __webpack_require__(4);
-	
-	var _classnames2 = _interopRequireDefault(_classnames);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-	
-	function Mask(props) {
-	  var type = props.type;
-	
-	  var css = (0, _classnames2.default)(_defineProperty({
-	    'overlay active': true
-	  }, 'overlay-' + type, !!type));
-	  return React.createElement('div', { className: css });
-	}
-	
-	exports.default = Mask;
-
-/***/ },
-/* 7 */
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -366,11 +341,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _react = __webpack_require__(3);
+	var _react = __webpack_require__(2);
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _classnames = __webpack_require__(4);
+	var _classnames = __webpack_require__(3);
 	
 	var _classnames2 = _interopRequireDefault(_classnames);
 	
@@ -432,7 +407,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = Icon;
 
 /***/ },
-/* 8 */
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -443,23 +418,23 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _react = __webpack_require__(3);
+	var _react = __webpack_require__(2);
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _classnames = __webpack_require__(4);
+	var _classnames = __webpack_require__(3);
 	
 	var _classnames2 = _interopRequireDefault(_classnames);
 	
-	var _mask = __webpack_require__(6);
+	var _mask = __webpack_require__(7);
 	
 	var _mask2 = _interopRequireDefault(_mask);
 	
-	var _Alert = __webpack_require__(9);
+	var _Alert = __webpack_require__(8);
 	
 	var _Alert2 = _interopRequireDefault(_Alert);
 	
-	var _Confirm = __webpack_require__(10);
+	var _Confirm = __webpack_require__(12);
 	
 	var _Confirm2 = _interopRequireDefault(_Confirm);
 	
@@ -530,7 +505,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = Dialog;
 
 /***/ },
-/* 9 */
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -539,15 +514,44 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	
-	var _buttons = __webpack_require__(11);
+	var _classnames = __webpack_require__(3);
+	
+	var _classnames2 = _interopRequireDefault(_classnames);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+	
+	function Mask(props) {
+	  var type = props.type;
+	
+	  var css = (0, _classnames2.default)(_defineProperty({
+	    'overlay active': true
+	  }, 'overlay-' + type, !!type));
+	  return React.createElement('div', { className: css });
+	}
+	
+	exports.default = Mask;
+
+/***/ },
+/* 8 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _buttons = __webpack_require__(9);
 	
 	var _buttons2 = _interopRequireDefault(_buttons);
 	
-	var _NoTitle = __webpack_require__(12);
+	var _NoTitle = __webpack_require__(10);
 	
 	var _NoTitle2 = _interopRequireDefault(_NoTitle);
 	
-	var _ExistTitle = __webpack_require__(13);
+	var _ExistTitle = __webpack_require__(11);
 	
 	var _ExistTitle2 = _interopRequireDefault(_ExistTitle);
 	
@@ -575,52 +579,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = Alert;
 
 /***/ },
-/* 10 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _buttons = __webpack_require__(11);
-	
-	var _buttons2 = _interopRequireDefault(_buttons);
-	
-	var _NoTitle = __webpack_require__(12);
-	
-	var _NoTitle2 = _interopRequireDefault(_NoTitle);
-	
-	var _ExistTitle = __webpack_require__(13);
-	
-	var _ExistTitle2 = _interopRequireDefault(_ExistTitle);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function Confirm(props) {
-	  var title = props.title;
-	  var children = props.children;
-	  var buttons = props.buttons;
-	  var show = props.show;
-	
-	  var ContentNode = title ? _ExistTitle2.default : _NoTitle2.default;
-	  return React.createElement(
-	    'div',
-	    { className: 'dialog', style: { display: show ? 'block' : 'none' } },
-	    React.createElement(ContentNode, { title: title, children: children }),
-	    React.createElement(
-	      'footer',
-	      { className: 'dialog-ft' },
-	      (0, _buttons2.default)(buttons)
-	    )
-	  );
-	}
-	
-	exports.default = Confirm;
-
-/***/ },
-/* 11 */
+/* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -631,7 +590,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 	
-	var _classnames = __webpack_require__(4);
+	var _classnames = __webpack_require__(3);
 	
 	var _classnames2 = _interopRequireDefault(_classnames);
 	
@@ -661,7 +620,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = renderButtons;
 
 /***/ },
-/* 12 */
+/* 10 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -687,7 +646,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = NoTitle;
 
 /***/ },
-/* 13 */
+/* 11 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -716,6 +675,51 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 	
 	exports.default = ExistTitle;
+
+/***/ },
+/* 12 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _buttons = __webpack_require__(9);
+	
+	var _buttons2 = _interopRequireDefault(_buttons);
+	
+	var _NoTitle = __webpack_require__(10);
+	
+	var _NoTitle2 = _interopRequireDefault(_NoTitle);
+	
+	var _ExistTitle = __webpack_require__(11);
+	
+	var _ExistTitle2 = _interopRequireDefault(_ExistTitle);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function Confirm(props) {
+	  var title = props.title;
+	  var children = props.children;
+	  var buttons = props.buttons;
+	  var show = props.show;
+	
+	  var ContentNode = title ? _ExistTitle2.default : _NoTitle2.default;
+	  return React.createElement(
+	    'div',
+	    { className: 'dialog', style: { display: show ? 'block' : 'none' } },
+	    React.createElement(ContentNode, { title: title, children: children }),
+	    React.createElement(
+	      'footer',
+	      { className: 'dialog-ft' },
+	      (0, _buttons2.default)(buttons)
+	    )
+	  );
+	}
+	
+	exports.default = Confirm;
 
 /***/ }
 /******/ ])
