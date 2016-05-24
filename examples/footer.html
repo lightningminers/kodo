@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="css/global.css" media="screen" title="no title" charset="utf-8">
+		<script src="../node_modules/react/dist/react.js" charset="utf-8"></script>
+		<script src="../node_modules/react-dom/dist/react-dom.js" charset="utf-8"></script>
+		<script src="http://cdn.bootcss.com/babel-core/5.8.23/browser.min.js"></script>
+		<style>
+			.title{
+				padding: 2em 0;
+			}
+			.page_title{
+				color:#225fba;
+				text-align: center;
+				font-size: 34px;
+				font-weight: 400;
+				margin: 0 15px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app"></div>
+		<script src="../dist/kodo.js" charset="utf-8"></script>
+		<script type="text/babel">
+			var ButtonOnClick = function (e) {
+				e.preventDefault();
+			}
+			var Footer = Kodo.Footer;
+      var items = [
+        {
+          idx: '1',
+          active: true,
+          text: '菜单一',
+          type:'num',
+          count:99,
+          methods: {
+            onClick: (e)=>{
+              console.log(e)
+            }
+          }
+        },
+        {
+          idx: '2',
+          text: '菜单二',
+          type: 'circle',
+          svg: 'home',
+          methods: {
+            onClick: (e)=>{
+              consle.log(e);
+            }
+          }
+        },
+        {
+          idx: '3',
+          text: '菜单三',
+          methods: {
+            onClick: (e)=>{
+
+            }
+          }
+        }
+      ];
+			ReactDOM.render((
+				<div>
+          <Footer items={ items }/>
+				</div>
+			),document.getElementById('app'));
+		</script>
+	</body>
+</html>

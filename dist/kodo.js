@@ -76,6 +76,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _header2 = _interopRequireDefault(_header);
 	
+	var _nav = __webpack_require__(19);
+	
+	var _nav2 = _interopRequireDefault(_nav);
+	
+	var _footer = __webpack_require__(20);
+	
+	var _footer2 = _interopRequireDefault(_footer);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	module.exports = {
@@ -83,7 +91,9 @@ return /******/ (function(modules) { // webpackBootstrap
 		Toast: _toast2.default,
 		Icon: _icon2.default,
 		Dialog: _dialog2.default,
-		Header: _header2.default
+		Header: _header2.default,
+		Nav: _nav2.default,
+		Footer: _footer2.default
 	};
 
 /***/ },
@@ -1091,6 +1101,304 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 	
 	exports.default = RightItem;
+
+/***/ },
+/* 19 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(2);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _classnames = __webpack_require__(3);
+	
+	var _classnames2 = _interopRequireDefault(_classnames);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var propTypes = {
+	  items: _react.PropTypes.array
+	};
+	
+	var defaultProps = {
+	  items: []
+	};
+	
+	var Nav = function (_React$Component) {
+	  _inherits(Nav, _React$Component);
+	
+	  function Nav() {
+	    _classCallCheck(this, Nav);
+	
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Nav).apply(this, arguments));
+	  }
+	
+	  _createClass(Nav, [{
+	    key: 'render',
+	    value: function render() {
+	      var items = this.props.items;
+	
+	      if (!items && !items.length) {
+	        return null;
+	      }
+	      var renderItems = items.map(function (action, idx) {
+	        var active = action.active;
+	        var text = action.text;
+	        var methods = action.methods;
+	        var url = action.url;
+	
+	        var css = (0, _classnames2.default)({
+	          'nav-item': true,
+	          'active': active
+	        });
+	        var Url = url ? url : '#';
+	        return _react2.default.createElement(
+	          'li',
+	          _extends({}, methods, {
+	            key: idx,
+	            className: css
+	          }),
+	          _react2.default.createElement(
+	            'a',
+	            {
+	              className: 'item-txt',
+	              href: Url
+	            },
+	            text
+	          )
+	        );
+	      });
+	      return _react2.default.createElement(
+	        'nav',
+	        {
+	          className: 'nav-top'
+	        },
+	        _react2.default.createElement(
+	          'ul',
+	          {
+	            className: 'nav-list nav-list--top'
+	          },
+	          renderItems
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return Nav;
+	}(_react2.default.Component);
+	
+	Nav.propTypes = propTypes;
+	Nav.defaultProps = defaultProps;
+	
+	exports.default = Nav;
+
+/***/ },
+/* 20 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(2);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _classnames = __webpack_require__(3);
+	
+	var _classnames2 = _interopRequireDefault(_classnames);
+	
+	var _svg = __webpack_require__(21);
+	
+	var _svg2 = _interopRequireDefault(_svg);
+	
+	var _Selector = __webpack_require__(24);
+	
+	var _Selector2 = _interopRequireDefault(_Selector);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var propTypes = {
+	  items: _react.PropTypes.array
+	};
+	
+	var defaultProps = {
+	  items: []
+	};
+	
+	// type : circle/num
+	
+	var Footer = function (_React$Component) {
+	  _inherits(Footer, _React$Component);
+	
+	  function Footer() {
+	    _classCallCheck(this, Footer);
+	
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Footer).apply(this, arguments));
+	  }
+	
+	  _createClass(Footer, [{
+	    key: 'render',
+	    value: function render() {
+	      var items = this.props.items;
+	
+	      if (!items && !items.length) {
+	        return null;
+	      }
+	      var renderItems = items.map(function (action, idx) {
+	        var active = action.active;
+	        var type = action.type;
+	        var methods = action.methods;
+	        var count = action.count;
+	        var text = action.text;
+	        var svg = action.svg;
+	
+	        var liCss = (0, _classnames2.default)({
+	          'nav-item': true,
+	          'active': active
+	        });
+	        return _react2.default.createElement(
+	          'li',
+	          _extends({}, methods, {
+	            key: idx,
+	            className: liCss
+	          }),
+	          _react2.default.createElement(_svg2.default, { svg: svg }),
+	          _react2.default.createElement(_Selector2.default, { type: type, count: count }),
+	          _react2.default.createElement(
+	            'p',
+	            {
+	              className: 'item-txt'
+	            },
+	            text
+	          )
+	        );
+	      });
+	      return _react2.default.createElement(
+	        'footer',
+	        { className: 'fixed-bottom' },
+	        _react2.default.createElement(
+	          'ul',
+	          { className: 'nav-list nav-list--bottom' },
+	          renderItems
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return Footer;
+	}(_react2.default.Component);
+	
+	Footer.propTypes = propTypes;
+	Footer.defaultProps = defaultProps;
+	
+	exports.default = Footer;
+
+/***/ },
+/* 21 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _classnames = __webpack_require__(3);
+	
+	var _classnames2 = _interopRequireDefault(_classnames);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+	
+	function Svg(props) {
+	  var svg = props.svg;
+	
+	  console.log(props);
+	  if (!svg) {
+	    return null;
+	  }
+	  var css = (0, _classnames2.default)(_defineProperty({
+	    'item-icon icon-svg': true
+	  }, 'icon-' + svg, !!svg));
+	  var href = 'images/icons.svg#icon-' + svg;
+	  return React.createElement(
+	    'svg',
+	    {
+	      className: css
+	    },
+	    React.createElement('use', { href: href })
+	  );
+	}
+	exports.default = Svg;
+
+/***/ },
+/* 22 */,
+/* 23 */,
+/* 24 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _classnames = __webpack_require__(3);
+	
+	var _classnames2 = _interopRequireDefault(_classnames);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+	
+	function Selector(props) {
+	  var type = props.type;
+	  var count = props.count;
+	
+	  if (!type) {
+	    return null;
+	  }
+	  var css = (0, _classnames2.default)(_defineProperty({}, 'remind-' + type, type));
+	  return React.createElement(
+	    'span',
+	    {
+	      className: css
+	    },
+	    count
+	  );
+	}
+	
+	exports.default = Selector;
 
 /***/ }
 /******/ ])

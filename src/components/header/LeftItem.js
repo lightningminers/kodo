@@ -25,7 +25,9 @@ function LeftItem (props){
           <Icon
             value={ icon }
           />
-          <span className="mix-txt">{ text }</span>
+          <span className="mix-txt">
+            { text }
+          </span>
         </span>
       );
     }
