@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="css/global.css" media="screen" title="no title" charset="utf-8">
+		<script src="../node_modules/react/dist/react.js" charset="utf-8"></script>
+		<script src="../node_modules/react-dom/dist/react-dom.js" charset="utf-8"></script>
+    <script type="text/javascript" src="http://cdn.bootcss.com/babel-core/5.8.23/browser.min.js"></script>
+		<style>
+			.title{
+				padding: 2em 0;
+			}
+			.page_title{
+				color:#225fba;
+				text-align: center;
+				font-size: 34px;
+				font-weight: 400;
+				margin: 0 15px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="title">
+				<h1 class="page_title">Button</h1>
+			</div>
+		</div>
+		<div id="app"></div>
+		<script src="../dist/kodo.js" charset="utf-8"></script>
+		<script type="text/babel">
+			var ButtonOnClick = function (e) {
+				e.preventDefault();
+			}
+			var Button = Kodo.Button;
+      var ActionSheet = Kodo.ActionSheet;
+      class ActionSheetDemo extends React.Component {
+        constructor (props){
+          super(props);
+          this.state = {
+            show: false
+          };
+          this.buttonHandler = this.buttonShow.bind(this);
+        }
+
+        buttonShow (e){
+          e.preventDefault();
+          const show = this.state.show ? false : true;
+          this.setState({
+            show: show
+          })
+        }
+        close (e){
+          const show = this.state.show ? false : true;
+          this.setState({
+            show: show
+          });
+        }
+        componentWillMount (){
+          //挂载之前，执行一次
+          console.log('this',this);
+        }
+
+        render (){
+          const { show } = this.state;
+          const items = [
+            {
+              idx: '1',
+              children: '菜单一'
+            },
+            {
+              idx: '2',
+              children: '菜单二'
+            }
+          ];
+          const buttons = [
+            {
+              idx: '1',
+              children: '取消',
+              methods: {
+                onClick: this.close.bind(this)
+              }
+            }
+          ];
+          return (
+            <div>
+              <Button href="https://github.com/icepy" onClick={ this.buttonHandler } style={{margin:5}}>
+                Actions Sheet
+              </Button>
+              <ActionSheet
+                show={ show }
+                items={ items }
+                buttons={ buttons }
+              />
+            </div>
+          );
+        }
+
+        componentDidMount (){
+          console.log(this.props.children);
+          console.log(ReactDOM.findDOMNode(this));
+        }
+
+      }
+			ReactDOM.render((
+				<div>
+					<ActionSheetDemo>
+            <span></span>
+            <span></span>
+          </ActionSheetDemo>
+				</div>
+			),document.getElementById('app'));
+		</script>
+	</body>
+</html>
