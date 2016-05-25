@@ -41,6 +41,7 @@
             show: false
           };
           this.buttonHandler = this.buttonShow.bind(this);
+					this.delay = true;
         }
 
         buttonShow (e){
@@ -58,8 +59,21 @@
         }
         componentWillMount (){
           //挂载之前，执行一次
-          console.log('this',this);
+          // console.log('this',this);
+					// this.setState({
+					// 	show: true
+					// });
         }
+
+				componentWillUpdate (nextProps,nextState){
+					console.log(nextState)
+					this.delay = false;
+				}
+
+				componentDidUpdate (preProps,preState){
+					console.log(preState)
+					this.delay = true;
+				}
 
         render (){
           const { show } = this.state;
@@ -97,8 +111,8 @@
         }
 
         componentDidMount (){
-          console.log(this.props.children);
-          console.log(ReactDOM.findDOMNode(this));
+          // console.log(this.props.children);
+          // console.log(ReactDOM.findDOMNode(this));
         }
 
       }
