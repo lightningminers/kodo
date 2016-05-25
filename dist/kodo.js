@@ -96,6 +96,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _actionsheet2 = _interopRequireDefault(_actionsheet);
 	
+	var _forms = __webpack_require__(29);
+	
+	var _forms2 = _interopRequireDefault(_forms);
+	
+	var _input = __webpack_require__(30);
+	
+	var _input2 = _interopRequireDefault(_input);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	module.exports = {
@@ -108,7 +116,9 @@ return /******/ (function(modules) { // webpackBootstrap
 		Footer: _footer2.default,
 		ActionSheet: _actionsheet2.default,
 		Svg: _svg2.default,
-		Mask: _mask2.default
+		Mask: _mask2.default,
+		Forms: _forms2.default,
+		Input: _input2.default
 	};
 
 /***/ },
@@ -1549,6 +1559,363 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 	
 	exports.default = renderItems;
+
+/***/ },
+/* 29 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(2);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _classnames = __webpack_require__(3);
+	
+	var _classnames2 = _interopRequireDefault(_classnames);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var propTypes = {
+	  type: _react.PropTypes.string
+	};
+	
+	var defaultProps = {
+	  type: 'normal'
+	};
+	
+	var Forms = function (_React$Component) {
+	  _inherits(Forms, _React$Component);
+	
+	  function Forms() {
+	    _classCallCheck(this, Forms);
+	
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Forms).apply(this, arguments));
+	  }
+	
+	  _createClass(Forms, [{
+	    key: 'render',
+	    value: function render() {
+	      var _props = this.props;
+	      var children = _props.children;
+	      var type = _props.type;
+	
+	      var css = (0, _classnames2.default)(_defineProperty({
+	        form: true
+	      }, 'form--no-' + type, type !== 'normal'));
+	      return _react2.default.createElement(
+	        'form',
+	        {
+	          className: css
+	        },
+	        children
+	      );
+	    }
+	  }]);
+	
+	  return Forms;
+	}(_react2.default.Component);
+	
+	Forms.propTypes = propTypes;
+	Forms.defaultProps = defaultProps;
+	
+	exports.default = Forms;
+
+/***/ },
+/* 30 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(2);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _Clear = __webpack_require__(31);
+	
+	var _Clear2 = _interopRequireDefault(_Clear);
+	
+	var _Normal = __webpack_require__(32);
+	
+	var _Normal2 = _interopRequireDefault(_Normal);
+	
+	var _Text = __webpack_require__(35);
+	
+	var _Text2 = _interopRequireDefault(_Text);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var propTypes = {
+	  label: _react.PropTypes.string,
+	  type: _react.PropTypes.string,
+	  value: _react.PropTypes.string,
+	  featrue: _react.PropTypes.string,
+	  mutable: _react.PropTypes.bool,
+	  placeholder: _react.PropTypes.bool
+	};
+	var defaultProps = {
+	  label: '',
+	  type: 'text',
+	  value: '',
+	  featrue: 'text', //clear
+	  mutable: true,
+	  placeholder: false
+	};
+	
+	var Input = function (_React$Component) {
+	  _inherits(Input, _React$Component);
+	
+	  function Input(props) {
+	    _classCallCheck(this, Input);
+	
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Input).call(this, props));
+	  }
+	
+	  _createClass(Input, [{
+	    key: 'render',
+	    value: function render() {
+	      var _props = this.props;
+	      var type = _props.type;
+	      var label = _props.label;
+	      var featrue = _props.featrue;
+	      var methods = _props.methods;
+	      var value = _props.value;
+	      var mutable = _props.mutable;
+	      var featrueMethods = _props.featrueMethods;
+	      var placeholder = _props.placeholder;
+	
+	      var FeatrueInput = null;
+	      switch (featrue) {
+	        case 'clear':
+	          FeatrueInput = _Clear2.default;
+	          break;
+	        case 'normal':
+	          FeatrueInput = _Normal2.default;
+	          break;
+	        default:
+	          FeatrueInput = _Text2.default;
+	      }
+	      return _react2.default.createElement(FeatrueInput, {
+	        type: type,
+	        label: label,
+	        methods: methods,
+	        value: value,
+	        mutable: mutable,
+	        featrueMethods: featrueMethods,
+	        placeholder: placeholder
+	      });
+	    }
+	  }]);
+	
+	  return Input;
+	}(_react2.default.Component);
+	
+	Input.propTypes = propTypes;
+	Input.defaultProps = defaultProps;
+	
+	exports.default = Input;
+
+/***/ },
+/* 31 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	var _classnames = __webpack_require__(3);
+	
+	var _classnames2 = _interopRequireDefault(_classnames);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function Clear(props) {
+	  var css = (0, _classnames2.default)({
+	    'form-item': true
+	  });
+	  var type = props.type;
+	  var value = props.value;
+	  var methods = props.methods;
+	  var label = props.label;
+	  var mutable = props.mutable;
+	  var featrueMethods = props.featrueMethods;
+	
+	  var MUTABLE = React.createElement('input', { type: type, defaultValue: value, className: 'f-text' });
+	  var NOMUTABLE = React.createElement('input', _extends({}, methods, { type: type, value: value, className: 'f-text' }));
+	  var Inputs = mutable ? MUTABLE : NOMUTABLE;
+	  return React.createElement(
+	    'div',
+	    {
+	      className: css
+	    },
+	    React.createElement(
+	      'label',
+	      { className: 'item-label' },
+	      label
+	    ),
+	    React.createElement(
+	      'div',
+	      { className: 'item-field' },
+	      Inputs,
+	      React.createElement(
+	        'span',
+	        _extends({}, featrueMethods, {
+	          className: 'icon-input-clear'
+	        }),
+	        React.createElement('i', { className: 'icon-cross' })
+	      )
+	    )
+	  );
+	}
+	
+	exports.default = Clear;
+
+/***/ },
+/* 32 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	var _classnames = __webpack_require__(3);
+	
+	var _classnames2 = _interopRequireDefault(_classnames);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function Normal(props) {
+	  var css = (0, _classnames2.default)({
+	    'form-item': true
+	  });
+	  var value = props.value;
+	  var label = props.label;
+	  var featrueMethods = props.featrueMethods;
+	  var placeholder = props.placeholder;
+	
+	  var fieldCss = (0, _classnames2.default)({
+	    'field-vale': true,
+	    placeholder: placeholder
+	  });
+	  return React.createElement(
+	    'div',
+	    {
+	      className: css
+	    },
+	    React.createElement(
+	      'label',
+	      { className: 'item-label' },
+	      label
+	    ),
+	    React.createElement(
+	      'div',
+	      { className: 'item-field' },
+	      React.createElement(
+	        'p',
+	        {
+	          className: fieldCss
+	        },
+	        value
+	      )
+	    ),
+	    React.createElement('icon', _extends({}, featrueMethods, {
+	      className: 'icon-v-right'
+	    }))
+	  );
+	}
+	
+	exports.default = Normal;
+
+/***/ },
+/* 33 */,
+/* 34 */,
+/* 35 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	var _classnames = __webpack_require__(3);
+	
+	var _classnames2 = _interopRequireDefault(_classnames);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function Text(props) {
+	  var css = (0, _classnames2.default)({
+	    'form-item': true
+	  });
+	  var type = props.type;
+	  var value = props.value;
+	  var methods = props.methods;
+	  var label = props.label;
+	  var mutable = props.mutable;
+	  var featrueMethods = props.featrueMethods;
+	
+	  var MUTABLE = React.createElement('input', { type: type, defaultValue: value, className: 'f-text' });
+	  var NOMUTABLE = React.createElement('input', _extends({}, methods, { type: type, value: value, className: 'f-text' }));
+	  var Inputs = mutable ? MUTABLE : NOMUTABLE;
+	  return React.createElement(
+	    'div',
+	    {
+	      className: css
+	    },
+	    React.createElement(
+	      'label',
+	      { className: 'item-label' },
+	      label
+	    ),
+	    React.createElement(
+	      'div',
+	      { className: 'item-field' },
+	      Inputs
+	    ),
+	    React.createElement('icon', _extends({}, featrueMethods, {
+	      className: 'icon-v-right'
+	    }))
+	  );
+	}
+	
+	exports.default = Text;
 
 /***/ }
 /******/ ])

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" media="screen" title="no title" charset="utf-8">
+		<link rel="stylesheet" href="css/global.css" media="screen" title="no title" charset="utf-8">
+		<script src="../node_modules/react/dist/react.js" charset="utf-8"></script>
+		<script src="../node_modules/react-dom/dist/react-dom.js" charset="utf-8"></script>
+		<script type="text/javascript" src="http://cdn.bootcss.com/babel-core/5.8.23/browser.min.js"></script>
+		<style>
+			.title{
+				padding: 2em 0;
+			}
+			.page_title{
+				color:#225fba;
+				text-align: center;
+				font-size: 34px;
+				font-weight: 400;
+				margin: 0 15px;
+			}
+			.page_pd{
+				padding-left: 5px;
+			}
+			h1{
+				font-size:14px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="title">
+				<h1 class="page_title">Forms</h1>
+			</div>
+		</div>
+		<div id="app"></div>
+		<script src="../dist/kodo.js" charset="utf-8"></script>
+		<script type="text/babel">
+			var ButtonOnClick = function (e) {
+				e.preventDefault();
+				console.log(e);
+			}
+      var Forms = Kodo.Forms;
+      var Input = Kodo.Input;
+      var methods ={
+        onChange: (e)=>{
+          console.log(e)
+        }
+      }
+      var featrueMethods = {
+        onClick: (e)=>{
+          console.log(e);
+        }
+      }
+			ReactDOM.render((
+				<div>
+          <Forms>
+            <Input
+              value="hello"
+              label="可变："
+            />
+            <Input
+              value="123456789"
+              label="不可变："
+              mutable={false}
+              methods={methods}
+            />
+            <Input
+              value="hello"
+              label="清除"
+              featrue="clear"
+              featrueMethods={ featrueMethods }
+            />
+            <Input
+              value="22:00之前"
+              label="到店时间："
+              featrue="normal"
+              featrueMethods={ featrueMethods }
+            />
+            <Input
+              value="22:00之前"
+              label="到店时间："
+              featrue="normal"
+              placeholder={ true }
+              featrueMethods={ featrueMethods }
+            />
+          </Forms>
+				</div>
+			),document.getElementById('app'));
+		</script>
+	</body>
+</html>

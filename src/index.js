@@ -8,6 +8,8 @@ import Header from './components/header/';
 import Nav from './components/nav/';
 import Footer from './components/footer/';
 import ActionSheet from './components/actionsheet/';
+import Forms from './components/forms/';
+import Input from './components/input/';
 
 module.exports = {
 	Button: Button,
@@ -19,5 +21,7 @@ module.exports = {
 	Footer: Footer,
 	ActionSheet: ActionSheet,
 	Svg: Svg,
-	Mask: Mask
+	Mask: Mask,
+	Forms: Forms,
+	Input: Input
 }
