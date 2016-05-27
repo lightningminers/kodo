@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="css/global.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/Swiper/3.3.1/css/swiper.css" media="screen" title="no title" charset="utf-8">
+    <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js" charset="utf-8"></script>
+    <script src="http://cdn.bootcss.com/Swiper/3.3.1/js/swiper.min.js" charset="utf-8"></script>
+    <script src="../node_modules/react/dist/react.js" charset="utf-8"></script>
+		<script src="../node_modules/react-dom/dist/react-dom.js" charset="utf-8"></script>
+		<script src="http://cdn.bootcss.com/babel-core/5.8.23/browser.min.js"></script>
+		<style>
+			.title{
+				padding: 2em 0;
+			}
+			.page_title{
+				color:#225fba;
+				text-align: center;
+				font-size: 34px;
+				font-weight: 400;
+				margin: 0 15px;
+			}
+      .swiper-container {
+        width: 600px;
+        height: 300px;
+      }
+		</style>
+	</head>
+	<body>
+    <div id="app"></div>
+    <div></div>
+		<script src="../dist/kodo.js" charset="utf-8"></script>
+		<script type="text/babel">
+
+      const findDOMNode = ReactDOM.findDOMNode;
+      const Button = Kodo.Button;
+      const imageArray = [
+        'http://content.battlenet.com.cn/wow/media/screenshots/screenshot-of-the-day/warlords-of-draenor/warlords-of-draenor-ss0602-large.jpg',
+        'http://content.battlenet.com.cn/wow/media/screenshots/screenshot-of-the-day/warlords-of-draenor/warlords-of-draenor-ss0601-large.jpg',
+        'http://content.battlenet.com.cn/wow/media/screenshots/screenshot-of-the-day/warlords-of-draenor/warlords-of-draenor-ss0600-large.jpg',
+        'http://content.battlenet.com.cn/wow/media/screenshots/screenshot-of-the-day/warlords-of-draenor/warlords-of-draenor-ss0599-large.jpg',
+        'http://content.battlenet.com.cn/wow/media/screenshots/screenshot-of-the-day/warlords-of-draenor/warlords-of-draenor-ss0598-large.jpg'
+      ];
+      class ImageSlide extends React.Component{
+        constructor(props){
+          super(props);
+          this.imageSlideContainer = null;
+          this.imageSlideObject = null;
+          this.HandlerWithMe = this.handlerMe.bind(this);
+
+        }
+        handlerMe (e){
+          console.log(this);
+        }
+        render (){
+          return (
+            <div className="container">
+              <Button
+                onClick={ this.HandlerWithMe }
+                ref="imageButton"
+              >click me</Button>
+              <br/>
+              <br/>
+              <div
+                className="swiper-container"
+              >
+                <div
+                  ref={(c)=>{
+                    this.imageSlideContainer = c;
+                  }}
+                  className="swiper-wrapper"
+                >
+
+                </div>
+              </div>
+            </div>
+          );
+        }
+        componentDidMount (){
+          console.log(this.imageSlideContainer);
+          // console.log(this.refs.imageSlideContainer);
+          let swiperHtml = imageArray.map((v)=>{
+            return '<div class="swiper-slide"><img src='+v+' /></div>';
+          }).join('');
+          this.imageSlideContainer.innerHTML = swiperHtml;
+          this.imageSlideObject = new Swiper('.swiper-container',{
+            direction: 'vertical',
+            loop: true,
+            autoplay: 5000
+          });
+
+          // console.log(findDOMNode(this.refs.imageButton));
+        }
+        componentWillUnmount (){
+          this.imageSlideContainer = null;
+          this.imageSlideObject = null;
+        }
+      }
+			ReactDOM.render((
+				<ImageSlide />
+			),document.getElementById('app'));
+		</script>
+	</body>
+</html>
