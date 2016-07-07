@@ -19,7 +19,7 @@
 
 ## 感谢
 
-感谢好友[为之](https://github.com/marvin1023)提供了CSS样本[sheral](https://github.com/imweb/sheral)项目。
+感谢好友[结一](https://github.com/marvin1023)提供了CSS样本[sheral](https://github.com/imweb/sheral)项目。
 
 ## 开源遵循
 
