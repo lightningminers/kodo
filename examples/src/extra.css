@@ -1,0 +1,10 @@
+.index-page a{
+  display: block;
+  margin: 10px;
+  color: #225fba;
+  text-align: center;
+  border: 1px solid #225fba;
+  padding: 5px;
+  border-radius: 5px;
+  text-decoration: none;
+}
