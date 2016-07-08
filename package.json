@@ -48,7 +48,7 @@
     "glob": "^7.0.5",
     "gulp": "^3.9.1",
     "html-webpack-plugin": "^2.22.0",
-    "istanbul": "^0.4.3",
+    "istanbul": "^0.4.4",
     "jade": "^1.11.0",
     "jade-loader": "^0.8.0",
     "koa": "^1.2.0",

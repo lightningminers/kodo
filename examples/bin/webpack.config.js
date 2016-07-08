@@ -86,8 +86,8 @@ var config = {
         }
       },
       {
-        test: /\.less$/,
-        loader: extractLESS.extract(['css','less']),
+        test: /\.css$/,
+        loader: extractLESS.extract(['css']),
         exclude: /(node_modules)/
       },
       {

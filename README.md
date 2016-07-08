@@ -2,24 +2,37 @@
 
 ![](rhino.png)
 
-[![Build Status](https://travis-ci.org/mulgore/kodo.svg?branch=master)](https://travis-ci.org/mulgore/kodo)
+[![Build Status](https://travis-ci.org/icepy/kodo.svg?branch=master)](https://travis-ci.org/icepy/kodo)
 
 ## How Run
 
-通过命令`npm install`来安装所需要的依赖环境，你可以运行`npm run dev`来构建kodo项目，运行`npm run dev-server`来启动一个服务器。
+首先你需要通过命令`npm install`来安装所需要的依赖环境。整个项目分为了两个部分，`kodo` 库源码和 `examples` 展示例子。
 
-如果你使用了`npm run dev-server`，你还需要在启动命令之前安装`nodemon`（建议全局安装）。
+你可以运行 `npm run dev` 来构建kodo项目开发者版本，然后运行 `npm run examp` 来构建 `examples` 展示例子。
 
-然后地址栏输入： `http://localhost:3001/examples` 查看demo
+现在你可以运行 `npm run dev-server` 来启动一个Web 服务器，这样在地址栏输入： `http://localhost:3000/#/index/` 就可以访问Demo了。
 
-希望各位能在github上`watching`这个项目，来接收大家的学习进度和互动信息。
+## 结构与参与项目的说明
 
-互动帮助指引可以阅读[课程指引](https://github.com/mulgore/kodo/wiki/%E8%AF%BE%E7%A8%8B%E6%8C%87%E5%BC%95)，kodo项目的预期是通过互动互助的学习方式，编写一个适用于移动端的react UI 库。
+`kodo` 项目的源码放置在顶层的 `src` 目录下，如果你需要创建一个组件：
 
+- 在 `components` 目录中创建你的组件目录和 `index.js` 文件
+- 在入口 `index.js` 文件中导出你的组件
+- 请注意将你的组件和导出组件使用大小写区分，例如 `components/button` ，导出时可以使用 `Button`。
+
+当你编写完一个组件时，需要进行测试：
+
+- 在 `test` 目录中编写单元测试文件
+- 在 `examples/src/interface` 目录中创建你的展示例子目录
+- 在 `examples/src/router` 路由文件中配置好你的路由 
+
+-----
+
+当你想亲自参与这个开源项目时可以Fork [kodo]() 项目，按照上述的方式来添加新的组件和展示例子，那么你就可以发送 PR 给我们了。
 
 ## 感谢
 
-感谢好友[结一](https://github.com/marvin1023)提供了CSS样本[sheral](https://github.com/imweb/sheral)项目。
+感谢好友 [结一](https://github.com/marvin1023) 提供了CSS UI [sheral](https://github.com/imweb/sheral)项目。
 
 ## 开源遵循
 
