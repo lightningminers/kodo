@@ -2,7 +2,8 @@
 
 ![](rhino.png)
 
-[![Build Status](https://travis-ci.org/icepy/kodo.svg?branch=master)](https://travis-ci.org/icepy/kodo)
+[![Build Status](https://travis-ci.org/icepy/kodo.svg?branch=master)](https://travis-ci.org/icepy/kodo) [![Coverage Status](https://coveralls.io/repos/github/icepy/kodo/badge.svg?branch=master)](https://coveralls.io/github/icepy/kodo?branch=master)
+
 
 ## How Run
 
@@ -24,7 +25,7 @@
 
 - 在 `test` 目录中编写单元测试文件
 - 在 `examples/src/interface` 目录中创建你的展示例子目录
-- 在 `examples/src/router` 路由文件中配置好你的路由 
+- 在 `examples/src/router` 路由文件中配置好你的路由
 
 -----
 
