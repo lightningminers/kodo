@@ -9,15 +9,15 @@
 
 首先你需要通过命令`npm install`来安装所需要的依赖环境。整个项目分为了两个部分，`kodo` 库源码和 `examples` 展示例子。
 
-你可以运行 `npm run dev` 来构建kodo项目开发者版本，然后运行 `npm run examp` 来构建 `examples` 展示例子。
+你可以运行 `npm run dev` 来构建 kodo 项目开发者版本，然后运行 `npm run examp` 来构建 `examples` 展示例子。
 
-现在你可以运行 `npm run dev-server` 来启动一个Web 服务器，这样在地址栏输入： `http://localhost:3000/#/index/` 就可以访问Demo了。
+现在你可以运行 `npm run dev-server` 来启动一个Web 服务器，这样在地址栏输入： `http://localhost:3000/#/index/` 就可以访问 Demo 了。
 
 ## How Update
 
 你可以使用 `npm outdate` 命令来查询是否需要更新，然后再运行 `npm update` 来个更新你的应用环境。
 
-## 结构与参与项目的说明
+## 结构与参与项目方式说明
 
 `kodo` 项目的源码放置在顶层的 `src` 目录下，如果你需要创建一个组件：
 
@@ -31,9 +31,60 @@
 - 在 `examples/src/interface` 目录中创建你的展示例子目录
 - 在 `examples/src/router` 路由文件中配置好你的路由
 
------
+当你想亲自参与这个开源项目时可以Fork [kodo](https://github.com/icepy/kodo) 项目，按照上述的方式来添加新的组件和展示例子，那么你就可以发送 PR 给我们了。
 
-当你想亲自参与这个开源项目时可以Fork [kodo]() 项目，按照上述的方式来添加新的组件和展示例子，那么你就可以发送 PR 给我们了。
+```JavaScript
+
+import React, { PropTypes } from 'react';
+import { render } from 'react-dom';
+import { Router, Route, hashHistory, IndexRoute } from 'react-router';
+import NoPages from '../components/nopages/';
+import IndexPages from '../interface/index/';
+import ButtonPages from '../interface/button/'
+
+const propTypes = {
+  children: PropTypes.element
+};
+
+// Web App 启动
+
+class AppStart extends React.Component {
+  render() {
+    if (!this.props.children) {
+      return null;
+    }
+    return (
+      <div
+        className="app-container"
+      >
+        { this.props.children }
+      </div>
+    );
+  }
+}
+
+AppStart.propTypes = propTypes;
+
+module.exports = {
+  start() {
+    render((
+      <Router
+        history={ hashHistory }
+      >
+        <Route
+          path="/"
+          component={ AppStart }
+        >
+          <IndexRoute component= { IndexPages } />
+          <Route path="button" component={ ButtonPages } />
+          <Route path="*" component={ NoPages } />
+        </Route>
+      </Router>
+    ), document.getElementById('app-container'));
+  }
+};
+
+```
 
 ## 感谢
 
