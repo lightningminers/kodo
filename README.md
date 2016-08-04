@@ -13,6 +13,10 @@
 
 现在你可以运行 `npm run dev-server` 来启动一个Web 服务器，这样在地址栏输入： `http://localhost:3000/#/index/` 就可以访问Demo了。
 
+## How Update
+
+你可以使用 `npm outdate` 命令来查询是否需要更新，然后再运行 `npm update` 来个更新你的应用环境。
+
 ## 结构与参与项目的说明
 
 `kodo` 项目的源码放置在顶层的 `src` 目录下，如果你需要创建一个组件：

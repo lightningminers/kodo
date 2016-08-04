@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { render } from 'react-dom';
-import { Router, Route, hashHistory } from 'react-router';
+import { Router, Route, hashHistory, IndexRoute } from 'react-router';
 import NoPages from '../components/nopages/';
 import IndexPages from '../interface/index/';
 import ButtonPages from '../interface/button/'
@@ -38,7 +38,7 @@ module.exports = {
           path="/"
           component={ AppStart }
         >
-          <Route path="index" component={ IndexPages } />
+          <IndexRoute component= { IndexPages } />
           <Route path="button" component={ ButtonPages } />
           <Route path="*" component={ NoPages } />
         </Route>

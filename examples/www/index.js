@@ -5,7 +5,7 @@ webpackJsonp([1],{
 
 	'use strict';
 	
-	var _router = __webpack_require__(243);
+	var _router = __webpack_require__(252);
 	
 	var _router2 = _interopRequireDefault(_router);
 	
@@ -14,12 +14,12 @@ webpackJsonp([1],{
 	//  App 启动
 	_router2.default.start();
 	
-	__webpack_require__(250);
-	__webpack_require__(252);
+	__webpack_require__(259);
+	__webpack_require__(261);
 
 /***/ },
 
-/***/ 243:
+/***/ 252:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30,19 +30,19 @@ webpackJsonp([1],{
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _reactDom = __webpack_require__(38);
+	var _reactDom = __webpack_require__(35);
 	
-	var _reactRouter = __webpack_require__(168);
+	var _reactRouter = __webpack_require__(175);
 	
-	var _nopages = __webpack_require__(244);
+	var _nopages = __webpack_require__(253);
 	
 	var _nopages2 = _interopRequireDefault(_nopages);
 	
-	var _index = __webpack_require__(245);
+	var _index = __webpack_require__(254);
 	
 	var _index2 = _interopRequireDefault(_index);
 	
-	var _button = __webpack_require__(246);
+	var _button = __webpack_require__(255);
 	
 	var _button2 = _interopRequireDefault(_button);
 	
@@ -103,7 +103,7 @@ webpackJsonp([1],{
 	          path: '/',
 	          component: AppStart
 	        },
-	        _react2.default.createElement(_reactRouter.Route, { path: 'index', component: _index2.default }),
+	        _react2.default.createElement(_reactRouter.IndexRoute, { component: _index2.default }),
 	        _react2.default.createElement(_reactRouter.Route, { path: 'button', component: _button2.default }),
 	        _react2.default.createElement(_reactRouter.Route, { path: '*', component: _nopages2.default })
 	      )
@@ -113,7 +113,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 244:
+/***/ 253:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -142,7 +142,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 245:
+/***/ 254:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -236,7 +236,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 246:
+/***/ 255:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -251,9 +251,9 @@ webpackJsonp([1],{
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _kodo = __webpack_require__(247);
+	var _kodo = __webpack_require__(256);
 	
-	var _header = __webpack_require__(249);
+	var _header = __webpack_require__(258);
 	
 	var _header2 = _interopRequireDefault(_header);
 	
@@ -366,7 +366,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 247:
+/***/ 256:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(module) {'use strict';
@@ -2488,11 +2488,11 @@ webpackJsonp([1],{
 	});
 	;
 	//# sourceMappingURL=kodo.js.map
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(248)(module)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(257)(module)))
 
 /***/ },
 
-/***/ 248:
+/***/ 257:
 /***/ function(module, exports) {
 
 	module.exports = function(module) {
@@ -2509,7 +2509,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 249:
+/***/ 258:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2546,14 +2546,14 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 250:
+/***/ 259:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 252:
+/***/ 261:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
