@@ -5,7 +5,7 @@
 [![Build Status](https://travis-ci.org/icepy/kodo.svg?branch=master)](https://travis-ci.org/icepy/kodo) [![Coverage Status](https://coveralls.io/repos/github/icepy/kodo/badge.svg?branch=master)](https://coveralls.io/github/icepy/kodo?branch=master)
 
 
-## How Run
+## How to Run
 
 首先你需要通过命令`npm install`来安装所需要的依赖环境。整个项目分为了两个部分，`kodo` 库源码和 `examples` 展示例子。
 
@@ -13,7 +13,7 @@
 
 现在你可以运行 `npm run dev-server` 来启动一个Web 服务器，这样在地址栏输入： `http://localhost:3000/#/index/` 就可以访问 Demo 了。
 
-## How Update
+## How to Update
 
 你可以使用 `npm outdate` 命令来查询是否需要更新，然后再运行 `npm update` 来个更新你的应用环境。
 
