@@ -1,9 +1,6 @@
 # kodo
 
-![](rhino.png)
-
 [![Build Status](https://travis-ci.org/icepy/kodo.svg?branch=master)](https://travis-ci.org/icepy/kodo) [![Coverage Status](https://coveralls.io/repos/github/icepy/kodo/badge.svg?branch=master)](https://coveralls.io/github/icepy/kodo?branch=master)
-
 
 ## How to Run
 
